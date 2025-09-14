@@ -116,6 +116,17 @@ aspect-ratio: 16/9;
   color: $light-text-secondary;
 }
 
+.gallery-slide {
+  height: 350px;
+  overflow: hidden;
+  border-radius: $radius-lg;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .products-section {
   background-color: $dark-bg-primary;
   min-height: 100vh;
@@ -205,6 +216,7 @@ aspect-ratio: 16/9;
     height: auto;
     padding: 2rem;
     border-top: none;
+    justify-content: space-between;
   }
 }
 
@@ -699,6 +711,7 @@ aspect-ratio: 16/9;
     border-radius: $radius-lg;
     box-shadow: $shadow-md;
     overflow: hidden;
+    overflow-x: auto;
     margin-bottom: 2rem;
     
     .price-table {

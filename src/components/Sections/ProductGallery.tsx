@@ -26,8 +26,6 @@ const ProductGallery = () => {
                   <Image
                     src={item.image}
                     alt={`Изделия из камня в Зеленограде - галерея работ StipStone ${item.id}`}
-                    height={350}
-                    fit="cover"
                     radius="md"
                     loading="lazy"
                     style={{ cursor: "pointer" }}
