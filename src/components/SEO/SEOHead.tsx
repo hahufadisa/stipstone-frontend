@@ -10,16 +10,17 @@ interface SEOHeadProps {
   ogUrl?: string;
   canonical?: string;
   noindex?: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   structuredData?: any;
 }
 
-const SEOHead = ({
+const SEOHead: React.FC<SEOHeadProps> = ({
   title = "StipStone - изделия из камня в Зеленограде | Столешницы, подоконники из искусственного камня",
   description = "Изделия из камня в Зеленограде от StipStone. Столешницы, подоконники, мойки из искусственного камня. Замер, изготовление и установка. Гарантия качества. ☎ +7 (904) 355-47-89",
   keywords = "изделие из камня зеленоград, столешницы зеленоград, подоконники из камня зеленоград, искусственный камень зеленоград, акриловый камень зеленоград, кварцевый камень зеленоград, мойки из камня зеленоград, барные стойки зеленоград, изготовление камня зеленоград, установка столешниц зеленоград",
   ogTitle,
   ogDescription,
-  ogImage = "/public/kitchen.jpg",
+  ogImage = "/kitchen.jpg",
   ogUrl = "https://stipstone-zelenograd.ru",
   canonical,
   noindex = false,
@@ -56,7 +57,10 @@ const SEOHead = ({
       <meta name="geo.position" content="55.99;37.20" />
       <meta name="ICBM" content="55.99, 37.20" />
       <meta name="contact" content="+7 (904) 355-47-89" />
-      <meta name="address" content="г.Москва, г.Зеленоград , Георгиевский проспект 33а" />
+      <meta
+        name="address"
+        content="г.Москва, г.Зеленоград , Георгиевский проспект 33а"
+      />
       {structuredData && (
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
@@ -66,7 +70,10 @@ const SEOHead = ({
       <meta name="copyright" content="StipStone" />
       <meta name="theme-color" content="#2B2B2B" />
       <meta name="msapplication-navbutton-color" content="#2B2B2B" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+      />
       <link rel="alternate" hrefLang="ru" href={ogUrl} />
       <link rel="alternate" hrefLang="x-default" href={ogUrl} />
     </Helmet>

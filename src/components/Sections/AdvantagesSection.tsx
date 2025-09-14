@@ -20,14 +20,8 @@ const AdvantagesSection: React.FC<AdvantagesSectionProps> = ({
     customSubtitle ||
     "6 веских аргументов «ЗА» для профессионалов и частных лиц";
 
-  // Вызываем useMatches вне условного блока
   const titleSize = useMatches({ base: "1.5rem", sm: "2rem", md: "2.5rem" });
   const subtitleSize = useMatches({ base: "1rem", sm: "1.2rem", md: "1.4rem" });
-  const negotiationSize = useMatches({
-    base: "1.2rem",
-    sm: "1.4rem",
-    md: "1.6rem",
-  });
 
   return (
     <Box id="advantages" py={{ base: "lg", md: "xl" }}>

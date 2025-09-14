@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Grid, Box } from "@mantine/core";
 import ContactInfo from "../components/ContactForm/ContactInfo";
 import ContactForm from "../components/ContactForm/ContactForm";
@@ -19,7 +18,7 @@ const ContactPage = () => {
         keywords="контакты камень зеленоград, StipStone зеленоград адрес, телефон изделия камень зеленоград, заказать столешницы зеленоград, консультация камень зеленоград, Георгиевский проспект 33а, замер камень зеленоград"
         ogTitle="Контакты StipStone в Зеленограде - изделия из камня"
         ogDescription="Контакты StipStone в Зеленограде. Заказать изделия из камня: столешницы, подоконники, мойки. Бесплатная консультация и замер."
-        ogImage="/public/kitchen6.jpg"
+        ogImage="/kitchen6.jpg"
         ogUrl="https://stipstone-zelenograd.ru/contacts"
         canonical="https://stipstone-zelenograd.ru/contacts"
         structuredData={breadcrumbData}
@@ -34,7 +33,7 @@ const ContactPage = () => {
               </Box>
             </Grid.Col>
 
-             <Grid.Col span={{ base: 12, md: 6 }}>
+            <Grid.Col span={{ base: 12, md: 6 }}>
               <Box className="contact-form-section">
                 <ContactForm />
               </Box>

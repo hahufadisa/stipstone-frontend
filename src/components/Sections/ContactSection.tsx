@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Text, Grid, Stack, Box, useMatches } from "@mantine/core";
+import { Container, Text, Stack, Box, useMatches } from "@mantine/core";
 import { motion } from "framer-motion";
 import { textContent } from "../../../public/data";
 import ContactInfoList from "./ContactInfoList";

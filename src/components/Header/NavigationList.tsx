@@ -8,7 +8,7 @@ interface NavigationListProps {
   isScrolled: boolean;
 }
 
-const NavigationList: React.FC<NavigationListProps> = ({ onItemClick }) => {
+const NavigationList: React.FC<NavigationListProps> = () => {
   const location = useLocation();
 
   return (

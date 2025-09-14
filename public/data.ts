@@ -55,23 +55,23 @@ export const textContent: TextContent = {
         gallery: [
             {
                 id: '5',
-                image: '/public/kitchen.jpg'
+                image: '/kitchen.jpg'
             },
             {
                 id: '6',
-                image: '/public/kitchen2.jpg'
+                image: '/kitchen2.jpg'
             },
             {
                 id: '7',
-                image: '/public/kitchen3.jpg'
+                image: '/kitchen3.jpg'
             },
             {
                 id: '1',
-                image: '/public/table2.jpg'
+                image: '/table2.jpg'
             },
             {
                 id: '2',
-                image: '/public/table.jpg'
+                image: '/table.jpg'
             }
         ],
         buttonText: "Подробнее →"
@@ -91,13 +91,11 @@ export const textContent: TextContent = {
             namePlaceholder: "Например: Владимир",
             phone: "Контактный телефон",
             phonePlaceholder: "+7 (___) ___-__-__",
-            file: "Файл",
-            fileDescription: "Вы можете приложить проект или эскиз",
-            fileButton: "Выберите файлы",
             message: "Дополнительная информация",
             messagePlaceholder: "Расскажите о вашем проекте...",
             submitButton: "Отправить",
-            privacy: "Мы не передаем Вашу персональную информацию третьим лицам"
+            email: "",
+            emailPlaceholder: ""
         },
         callButton: "Заказать звонок"
     }
@@ -117,19 +115,19 @@ export const services: Service[] = [
         id: '1',
         title: 'ДОПОЛНИТЕЛЬНАЯ СКИДКА',
         description: 'ДО -50% НА ВЫБОРОЧНЫЕ ПОЗИЦИИ',
-        image: '/public/kitchen.jpg',
+        image: '/kitchen.jpg',
     },
     {
         id: '2',
         title: 'Сезонный марафон скидок',
         description: 'Распродажа материала до -55%',
-        image: '/public/kitchen2.jpg',
+        image: '/kitchen2.jpg',
     },
     {
         id: '3',
         title: 'Изделия из камня',
         description: 'В Зеленограде',
-        image: '/public/kitchen4.jpg'
+        image: '/kitchen4.jpg'
     }
 ];
 
@@ -177,28 +175,28 @@ export const products: Product[] = [
         id: '1',
         title: 'КАТАЛОГ ИЗДЕЛИЙ',
         description: 'Столешницы, подоконники, барные стойки',
-        image: '/public/table2.jpg',
+        image: '/table2.jpg',
         price: 'от 8 120 руб/м²'
     },
     {
         id: '2',
         title: 'КАТАЛОГ КАМНЯ',
         description: 'Акриловый камень и кварцевый агломерат',
-        image: '/public/table.jpg',
+        image: '/table.jpg',
         price: 'от 11 940 руб/м²'
     },
     {
         id: '3',
         title: 'КАТАЛОГ МОЕК И РАКОВИН',
         description: 'Интегрированные мойки и раковины',
-        image: '/public/bath.jpg',
+        image: '/bath.jpg',
         price: 'от 15 000 руб'
     },
     {
         id: '4',
         title: 'КАТАЛОГ КРОМОК И БОРТОВ',
         description: 'Декоративные кромки и бортики',
-        image: '/public/bath2.jpg',
+        image: '/bath2.jpg',
         price: 'от 2 500 руб/м.п.'
     }
 ];
@@ -207,7 +205,7 @@ export const catalogCategories = [
     {
         id: '1',
         title: 'СТОЛЕШНИЦЫ',
-        image: '/public/table2.jpg',
+        image: '/table2.jpg',
         links: [
             'Столешницы из иск. камня',
             'Столешницы из акрила',
@@ -221,7 +219,7 @@ export const catalogCategories = [
     {
         id: '2',
         title: 'ПОДОКОННИКИ',
-        image: '/public/table.jpg',
+        image: '/table.jpg',
         links: [
             'Подоконники из иск. камня',
             'Подоконники из акрила',
@@ -234,7 +232,7 @@ export const catalogCategories = [
     {
         id: '3',
         title: 'ДРУГИЕ ИЗДЕЛИЯ',
-        image: '/public/bath.jpg',
+        image: '/bath.jpg',
         links: [
             'Столы из иск. камня',
             'Столы из кварца',
@@ -247,7 +245,7 @@ export const catalogCategories = [
     {
         id: '4',
         title: 'ЭЛЕМЕНТЫ ИЗДЕЛИЙ',
-        image: '/public/bath2.jpg',
+        image: '/bath2.jpg',
         links: [
             'Мойки и раковины',
             'Стеновые панели',

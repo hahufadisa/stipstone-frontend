@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@import './variables.scss';
+@import '_mixins.scss';
 
 .hero-background {
   position: absolute;
@@ -68,7 +68,6 @@ aspect-ratio: 16/9;
   text-align: center;
 }
 
-// Advantages Section
 .advantages-section {
   background-color: $dark-bg-secondary;
   min-height: 100vh;
@@ -117,7 +116,6 @@ aspect-ratio: 16/9;
   color: $light-text-secondary;
 }
 
-// Products Section
 .products-section {
   background-color: $dark-bg-primary;
   min-height: 100vh;
@@ -267,7 +265,6 @@ aspect-ratio: 16/9;
   margin-top: $spacing-md;
 }
 
-// Mobile Header
 .mobile-header-container {
   @include mobile-hidden();
   
@@ -357,7 +354,6 @@ aspect-ratio: 16/9;
 
 
 
-// Catalog Page Styles
 .catalog-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -477,7 +473,6 @@ aspect-ratio: 16/9;
   }
 }
 
-// Contact Page Styles
 .contact-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -504,7 +499,6 @@ aspect-ratio: 16/9;
   }
 }
 
-// Contact Info Styles
 .contact-info-container {
   .contact-info-item {
     padding: 1.5rem 0;
@@ -536,7 +530,6 @@ aspect-ratio: 16/9;
   }
 }
 
-// Contact Form Styles
 .contact-form-container {
   .contact-form-title {
     color: #2c3e50;

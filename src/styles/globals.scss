@@ -1,7 +1,6 @@
-@import 'variables';
-@import 'mixins';
+@import './variables.scss';
+@import './_mixins.scss';
 
-// Глобальные стили для шрифта (основной шрифт определен в fonts.css)
 * {
   //debug
   // border: 1px solid red;
@@ -24,7 +23,6 @@ html, body {
   }
 }
 
-// Адаптивные утилиты
 @media (max-width: 768px) {
   .mobile-hidden {
     display: none !important;
@@ -35,14 +33,6 @@ html, body {
   .desktop-hidden {
     display: none !important;
   }
-}
-
-.fade-in {
-  @include fade-in();
-}
-
-.slide-up {
-  @include slide-up();
 }
 
 a {
@@ -101,7 +91,6 @@ a {
   }
 }
 
-// Стили для Swiper
 .hero-swiper {
   width: 100% !important;
   height: 100% !important;

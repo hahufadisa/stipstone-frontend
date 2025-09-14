@@ -22,7 +22,7 @@ const HomePage = () => {
         keywords="изделие из камня зеленоград, столешницы зеленоград, подоконники из камня зеленоград, искусственный камень зеленоград, акриловый камень зеленоград, кварцевый камень зеленоград, мойки из камня зеленоград, барные стойки зеленоград, изготовление камня зеленоград, установка столешниц зеленоград, StipStone"
         ogTitle="StipStone - изделия из камня в Зеленограде"
         ogDescription="Изделия из камня в Зеленограде от StipStone. Столешницы, подоконники, мойки из искусственного камня. Замер, изготовление и установка."
-        ogImage="/public/kitchen.jpg"
+        ogImage="/kitchen.jpg"
         ogUrl="https://stipstone-zelenograd.ru/"
         canonical="https://stipstone-zelenograd.ru/"
         structuredData={structuredData}

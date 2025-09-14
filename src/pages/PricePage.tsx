@@ -23,7 +23,7 @@ const PricePage: React.FC = () => {
         keywords="цены камень зеленоград, стоимость столешниц зеленоград, цена подоконники камень зеленоград, прайс лист камень зеленоград, стоимость изделий камень зеленоград, цены искусственный камень зеленоград, стоимость акриловый камень, цена кварцевый камень зеленоград"
         ogTitle="Цены на изделия из камня в Зеленограде - StipStone"
         ogDescription="Актуальные цены на изделия из камня в Зеленограде: столешницы, подоконники, мойки из искусственного камня. Прозрачное ценообразование."
-        ogImage="/public/kitchen3.jpg"
+        ogImage="/kitchen3.jpg"
         ogUrl="https://stipstone-zelenograd.ru/prices"
         canonical="https://stipstone-zelenograd.ru/prices"
         structuredData={breadcrumbData}

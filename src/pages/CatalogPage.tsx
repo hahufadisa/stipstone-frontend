@@ -36,7 +36,7 @@ const CatalogPage = () => {
         keywords="каталог камня зеленоград, столешницы из камня каталог зеленоград, подоконники камень каталог зеленоград, мойки камень каталог зеленоград, искусственный камень каталог зеленоград, акриловый камень каталог, кварцевый камень каталог, изделия камень ассортимент зеленоград"
         ogTitle="Каталог изделий из камня в Зеленограде - StipStone"
         ogDescription="Полный каталог изделий из камня в Зеленограде: столешницы, подоконники, мойки, барные стойки из акрилового и кварцевого камня."
-        ogImage="/public/table2.jpg"
+        ogImage="/table2.jpg"
         ogUrl="https://stipstone-zelenograd.ru/catalog"
         canonical="https://stipstone-zelenograd.ru/catalog"
         structuredData={[productData, breadcrumbData]}

@@ -1,15 +1,6 @@
 import React, { useState } from "react";
-import {
-  TextInput,
-  Textarea,
-  Button,
-  Stack,
-  Text,
-  Box,
-  FileInput,
-} from "@mantine/core";
+import { TextInput, Textarea, Button, Stack, Text, Box } from "@mantine/core";
 import { motion } from "framer-motion";
-import { IconCloudUpload } from "@tabler/icons-react";
 import { textContent } from "../../../public/data";
 
 const ContactForm: React.FC = () => {
@@ -90,15 +81,14 @@ const ContactForm: React.FC = () => {
               {textContent.contact.form.submitButton}
             </Button>
 
-            {/* Уведомление о конфиденциальности */}
-            <Text
+            {/* <Text
               size="xs"
               c="dimmed"
               ta="center"
               className="contact-form-privacy"
             >
-              {textContent.contact.form.privacy}
-            </Text>
+              {textContent.contact.form.email|| ""}
+            </Text> */}
           </Stack>
         </form>
       </Box>

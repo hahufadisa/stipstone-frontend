@@ -1,21 +1,7 @@
 import React from "react";
-import {
-  Stack,
-  Group,
-  Box,
-  Text,
-  Button,
-  Anchor,
-  Grid,
-  Flex,
-} from "@mantine/core";
+import { Stack, Group, Box, Text, Button, Grid, Flex } from "@mantine/core";
 import { motion } from "framer-motion";
-import {
-  IconPhone,
-  IconMail,
-  IconMapPin,
-  IconClock,
-} from "@tabler/icons-react";
+import { IconPhone, IconMail, IconMapPin } from "@tabler/icons-react";
 import { companyInfo, textContent } from "../../../public/data";
 import { Link } from "react-router-dom";
 

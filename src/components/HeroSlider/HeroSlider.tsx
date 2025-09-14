@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { Container, Group, Box, Image } from "@mantine/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -8,7 +8,30 @@ import ServiceCard from "./ServiceCard";
 
 const HeroSlider = memo(() => {
   return (
-    <Box id="hero" className="hero-container">
+    <Box id="hero" className="hero-container" style={{ position: "relative" }}>
+      <Box
+        className="hero-background"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 0,
+        }}
+      >
+        <Image
+          src="/bg.jpg"
+          alt="Hero Background"
+          loading="eager"
+          fetchPriority="high"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+      </Box>
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={0}
@@ -23,12 +46,11 @@ const HeroSlider = memo(() => {
         style={{
           height: "100%",
           width: "100%",
+          position: "relative",
+          zIndex: 1,
         }}
         className="hero-swiper"
       >
-        <Box className="hero-background">
-          <Image src={"/public/bg.jpg"} alt="Hero Background" loading="lazy" />
-        </Box>
         {services.map((service, index) => (
           <SwiperSlide key={service.id}>
             <Container
@@ -57,5 +79,7 @@ const HeroSlider = memo(() => {
     </Box>
   );
 });
+
+HeroSlider.displayName = "HeroSlider";
 
 export default HeroSlider;

@@ -13,7 +13,7 @@ export default defineConfig({
   ],
   build: {
     target: 'esnext',
-    minify: 'terser',
+    minify: 'esbuild',
     cssMinify: true,
     rollupOptions: {
       output: {
@@ -71,14 +71,6 @@ export default defineConfig({
       overlay: false
     },
     host: true
-  },
-  css: {
-    devSourcemap: false,
-    preprocessorOptions: {
-      scss: {
-        // additionalData: `@use "src/styles/variables.scss" as *;`
-      }
-    }
   },
   esbuild: {
     drop: ['console', 'debugger']
