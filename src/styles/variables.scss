@@ -1,0 +1,74 @@
+// Mantine CSS переменные
+$primary-color: var(--mantine-color-primary-4);
+$primary-dark: var(--mantine-color-primary-5);
+$primary-light: var(--mantine-color-primary-3);
+
+$secondary-color: var(--mantine-color-secondary-4);
+$secondary-dark: var(--mantine-color-secondary-5);
+$secondary-light: var(--mantine-color-secondary-3);
+
+$dark-bg-primary: var(--mantine-color-dark-9);
+$dark-bg-secondary: var(--mantine-color-dark-8);
+$dark-bg-tertiary: var(--mantine-color-dark-3);
+$dark-bg-card: var(--mantine-color-dark-8);
+$dark-text-primary: var(--mantine-color-gray-9);
+$dark-text-secondary: var(--mantine-color-gray-7);
+
+$light-bg-primary: white;
+$light-text-primary: var(--mantine-color-gray-9);
+$light-text-secondary: var(--mantine-color-gray-7);
+$light-text-muted: var(--mantine-color-gray-6);
+
+$gradient-primary: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+$gradient-dark: linear-gradient(135deg, $dark-bg-primary 0%, $dark-bg-secondary 100%);
+$gradient-hero: linear-gradient(135deg, var(--mantine-color-dark-9) 0%, var(--mantine-color-dark-8) 100%);
+
+$shadow-sm: var(--mantine-shadow-xs);
+$shadow-md: var(--mantine-shadow-sm);
+$shadow-lg: var(--mantine-shadow-md);
+$shadow-xl: var(--mantine-shadow-lg);
+$shadow-primary: 0 4px 12px rgba(231, 76, 60, 0.3);
+$shadow-primary-hover: 0 6px 20px rgba(231, 76, 60, 0.4);
+
+$radius-sm: var(--mantine-radius-xs);
+$radius-md: var(--mantine-radius-sm);
+$radius-lg: var(--mantine-radius-md);
+$radius-xl: var(--mantine-radius-lg);
+$radius-full: 50%;
+
+$spacing-xs: var(--mantine-spacing-xs);
+$spacing-sm: var(--mantine-spacing-sm);
+$spacing-md: var(--mantine-spacing-md);
+$spacing-lg: var(--mantine-spacing-lg);
+$spacing-xl: var(--mantine-spacing-xl);
+$spacing-2xl: 3rem;
+$spacing-3xl: 4rem;
+
+// Размеры
+$header-height: 80px;
+$section-padding: 80px 0;
+$section-padding-mobile: 60px 0;
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-2xl: 1400px;
+
+$font-family-primary: var(--mantine-font-family);
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;

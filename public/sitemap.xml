@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Главная страница -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/" />
+    <image:image>
+      <image:loc>https://stipstone-zelenograd.ru/public/kitchen.jpg</image:loc>
+      <image:title>Изделия из камня в Зеленограде - StipStone</image:title>
+      <image:caption>Столешницы и изделия из искусственного камня в Зеленограде</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Каталог -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog" />
+    <image:image>
+      <image:loc>https://stipstone-zelenograd.ru/public/table2.jpg</image:loc>
+      <image:title>Каталог изделий из камня в Зеленограде</image:title>
+      <image:caption>Столешницы, подоконники, мойки из искусственного камня</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Цены -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/prices</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/prices" />
+  </url>
+
+  <!-- Контакты -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/contacts</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/contacts" />
+  </url>
+
+  <!-- Дополнительные страницы для категорий товаров -->
+  
+  <!-- Столешницы из камня Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/stoleshnitsy</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/stoleshnitsy" />
+    <image:image>
+      <image:loc>https://stipstone-zelenograd.ru/public/kitchen2.jpg</image:loc>
+      <image:title>Столешницы из камня в Зеленограде</image:title>
+      <image:caption>Изготовление столешниц из искусственного камня в Зеленограде</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Подоконники из камня Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/podokonniki</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/podokonniki" />
+    <image:image>
+      <image:loc>https://stipstone-zelenograd.ru/public/table.jpg</image:loc>
+      <image:title>Подоконники из камня в Зеленограде</image:title>
+      <image:caption>Подоконники из искусственного камня в Зеленограде</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Мойки из камня Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/moyki</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/moyki" />
+    <image:image>
+      <image:loc>https://stipstone-zelenograd.ru/public/bath.jpg</image:loc>
+      <image:title>Мойки из камня в Зеленограде</image:title>
+      <image:caption>Интегрированные мойки из искусственного камня в Зеленограде</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Барные стойки из камня Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/barnye-stoyki</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/barnye-stoyki" />
+    <image:image>
+      <image:loc>https://stipstone-zelenograd.ru/public/kitchen4.jpg</image:loc>
+      <image:title>Барные стойки из камня в Зеленограде</image:title>
+      <image:caption>Барные стойки из искусственного камня в Зеленограде</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Акриловый камень Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/akrilovyy-kamen</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/akrilovyy-kamen" />
+  </url>
+
+  <!-- Кварцевый камень Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/kvartsevyy-kamen</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/kvartsevyy-kamen" />
+  </url>
+
+  <!-- Дополнительные SEO страницы для максимального охвата -->
+  
+  <!-- Столешницы для кухни Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/stoleshnitsy-dlya-kuhni</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/stoleshnitsy-dlya-kuhni" />
+  </url>
+
+  <!-- Столешницы для ванной Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/stoleshnitsy-dlya-vannoy</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/stoleshnitsy-dlya-vannoy" />
+  </url>
+
+  <!-- Подоконники-столешницы Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/catalog/podokonniki-stoleshnitsy</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/catalog/podokonniki-stoleshnitsy" />
+  </url>
+
+  <!-- Изготовление изделий из камня Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/services/izgotovlenie</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/services/izgotovlenie" />
+  </url>
+
+  <!-- Установка изделий из камня Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/services/ustanovka</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/services/ustanovka" />
+  </url>
+
+  <!-- Замер изделий из камня Зеленоград -->
+  <url>
+    <loc>https://stipstone-zelenograd.ru/services/zamer</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stipstone-zelenograd.ru/services/zamer" />
+  </url>
+
+</urlset>

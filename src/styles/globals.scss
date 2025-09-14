@@ -1,0 +1,159 @@
+@import 'variables';
+@import 'mixins';
+
+// Глобальные стили для шрифта (основной шрифт определен в fonts.css)
+* {
+  //debug
+  // border: 1px solid red;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+  max-width: 100%;
+    overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Адаптивные утилиты
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-hidden {
+    display: none !important;
+  }
+}
+
+.fade-in {
+  @include fade-in();
+}
+
+.slide-up {
+  @include slide-up();
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.mobile-hidden {
+  @include mobile-hidden();
+}
+
+.desktop-hidden {
+  @include desktop-hidden();
+}
+
+.btn-primary {
+  @include button-primary();
+}
+
+.btn-outline {
+  @include button-outline();
+}
+
+.section {
+  padding: $section-padding;
+  
+  @include mobile {
+    padding: $section-padding-mobile;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Стили для Swiper
+.hero-swiper {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  overflow: hidden !important;
+}
+
+.hero-swiper .swiper-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  transition-property: transform !important;
+  box-sizing: content-box !important;
+}
+
+.hero-swiper .swiper-slide {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-swiper .swiper-slide-active {
+  z-index: 2 !important;
+}
+
+.hero-swiper .swiper-slide-next,
+.hero-swiper .swiper-slide-prev {
+  z-index: 1 !important;
+}
+
+
+.hero-swiper .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  border-radius: $radius-full !important;
+  margin: 0 6px !important;
+  cursor: pointer !important;
+  transition: all $transition-normal !important;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: $primary-color !important;
+  transform: scale(1.2) !important;
+}

@@ -1,0 +1,6 @@
+# игнорим билд и node_modules
+# игнорим .env файл
+.env
+dist
+node_modules
+
