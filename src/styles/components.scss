@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import '_mixins.scss';
+@import "./variables.scss";
+@import "_mixins.scss";
 
 .hero-background {
   position: absolute;
@@ -48,8 +48,8 @@
 
 .hero-service-image {
   width: 100%;
-height: 250px;
-aspect-ratio: 16/9;
+  height: 250px;
+  aspect-ratio: 16/9;
   border-radius: $radius-lg;
   @include center-flex();
   overflow: hidden;
@@ -72,7 +72,7 @@ aspect-ratio: 16/9;
   background-color: $dark-bg-secondary;
   min-height: 100vh;
   @include center-flex();
-  
+
   @media (max-width: 768px) {
     min-height: auto;
     padding: 2rem 0;
@@ -91,7 +91,7 @@ aspect-ratio: 16/9;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  
+
   .mantine-Stack-root {
     height: 100%;
     display: flex;
@@ -131,7 +131,7 @@ aspect-ratio: 16/9;
   background-color: $dark-bg-primary;
   min-height: 100vh;
   @include center-flex();
-  
+
   @media (max-width: 768px) {
     min-height: auto;
     padding: 2rem 0;
@@ -155,7 +155,7 @@ aspect-ratio: 16/9;
   height: 100%;
   display: flex;
   flex-direction: column;
-  
+
   .mantine-Stack-root {
     height: 100%;
     display: flex;
@@ -211,7 +211,7 @@ aspect-ratio: 16/9;
   border-top: 1px solid $dark-bg-card;
   @include center-flex();
   cursor: default;
-  
+
   @media (max-width: 768px) {
     height: auto;
     padding: 2rem;
@@ -232,18 +232,18 @@ aspect-ratio: 16/9;
   height: 100%;
   display: flex;
   flex-direction: column;
-  
+
   .mantine-Stack-root {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  
+
   @media (max-width: 768px) {
     background: transparent;
     padding: 0.5rem 0;
-    
+
     &:hover {
       background: transparent;
       transform: none;
@@ -272,14 +272,13 @@ aspect-ratio: 16/9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
 .contact-submit-button {
   margin-top: $spacing-md;
 }
 
 .mobile-header-container {
   @include mobile-hidden();
-  
+
   @include mobile {
     display: block !important;
   }
@@ -298,12 +297,12 @@ aspect-ratio: 16/9;
   box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
   transition: all $transition-normal;
   cursor: pointer;
-  
+
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
   }
-  
+
   &:active {
     transform: scale(0.95);
   }
@@ -364,70 +363,68 @@ aspect-ratio: 16/9;
   width: 100%;
 }
 
-
-
 .catalog-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 2rem 0;
-  
+
   .catalog-title {
     color: #2c3e50;
     font-weight: 700;
     margin-bottom: 3rem;
-    
+
     @media (max-width: 768px) {
       font-size: 2rem;
       margin-bottom: 2rem;
     }
   }
-  
+
   .catalog-category-card {
     height: 100%;
     transition: all 0.3s ease;
     border: 1px solid #e9ecef;
     display: flex;
     flex-direction: column;
-    
+
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       border-color: #1976d2;
     }
-    
+
     .mantine-Card-root {
       height: 100%;
       display: flex;
       flex-direction: column;
     }
-    
+
     .mantine-Stack-root {
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    
+
     .catalog-category-image {
       border-radius: 8px 8px 0 0;
       overflow: hidden;
       flex-shrink: 0;
     }
-    
+
     .catalog-category-title {
       color: #1976d2;
       font-weight: 600;
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
-    
+
     .catalog-category-link {
       color: #6c757d;
       text-decoration: none;
       padding: 0.25rem 0;
       border-bottom: 1px solid transparent;
       transition: all 0.2s ease;
-      
+
       &:hover {
         color: #1976d2;
         border-bottom-color: #1976d2;
@@ -435,46 +432,46 @@ aspect-ratio: 16/9;
       }
     }
   }
-  
+
   .catalog-service-card {
     height: 100%;
     transition: all 0.3s ease;
     border: 1px solid #e9ecef;
     display: flex;
     flex-direction: column;
-    
+
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       border-color: #1976d2;
     }
-    
+
     .mantine-Card-root {
       height: 100%;
       display: flex;
       flex-direction: column;
     }
-    
+
     .mantine-Stack-root {
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    
+
     .catalog-service-icon {
       background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
       color: white;
       flex-shrink: 0;
     }
-    
+
     .catalog-service-title {
       color: #2c3e50;
       font-weight: 600;
       margin-bottom: 0.5rem;
       font-size: 1.1rem;
     }
-    
+
     .catalog-service-description {
       color: #6c757d;
       line-height: 1.5;
@@ -489,11 +486,11 @@ aspect-ratio: 16/9;
   min-height: 100vh;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 2rem 0;
-  
+
   .contact-page-grid {
     min-height: 80vh;
   }
-  
+
   .contact-info-section {
     background: white;
     border-radius: 12px;
@@ -501,7 +498,7 @@ aspect-ratio: 16/9;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: fit-content;
   }
-  
+
   .contact-form-section {
     background: #f8f9fa;
     border-radius: 12px;
@@ -515,12 +512,12 @@ aspect-ratio: 16/9;
   .contact-info-item {
     padding: 1.5rem 0;
     border-bottom: 1px solid #e9ecef;
-    
+
     &:last-child {
       border-bottom: none;
     }
   }
-  
+
   .contact-info-icon {
     flex-shrink: 0;
     width: 40px;
@@ -531,11 +528,11 @@ aspect-ratio: 16/9;
     background: #f8f9fa;
     border-radius: 8px;
   }
-  
+
   .contact-info-link {
     color: #1976d2;
     text-decoration: none;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -548,7 +545,7 @@ aspect-ratio: 16/9;
     margin-bottom: 2rem;
     text-align: center;
   }
-  
+
   .contact-form-input {
     .mantine-Input-input {
       border: 1px solid #dee2e6;
@@ -556,20 +553,20 @@ aspect-ratio: 16/9;
       padding: 12px 16px;
       font-size: 14px;
       transition: all 0.3s ease;
-      
+
       &:focus {
         border-color: #1976d2;
         box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
       }
     }
-    
+
     .mantine-Input-label {
       font-weight: 600;
       color: #2c3e50;
       margin-bottom: 8px;
     }
   }
-  
+
   .contact-form-file {
     .mantine-FileInput-input {
       border: 2px dashed #dee2e6;
@@ -578,14 +575,14 @@ aspect-ratio: 16/9;
       text-align: center;
       background: white;
       transition: all 0.3s ease;
-      
+
       &:hover {
         border-color: #1976d2;
         background: #f8f9fa;
       }
     }
   }
-  
+
   .contact-form-textarea {
     .mantine-Input-input {
       border: 1px solid #dee2e6;
@@ -593,20 +590,20 @@ aspect-ratio: 16/9;
       padding: 12px 16px;
       font-size: 14px;
       transition: all 0.3s ease;
-      
+
       &:focus {
         border-color: #1976d2;
         box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
       }
     }
-    
+
     .mantine-Input-label {
       font-weight: 600;
       color: #2c3e50;
       margin-bottom: 8px;
     }
   }
-  
+
   .contact-form-submit {
     background: #e74c3c;
     border: none;
@@ -615,14 +612,14 @@ aspect-ratio: 16/9;
     font-weight: 600;
     font-size: 16px;
     transition: all 0.3s ease;
-    
+
     &:hover {
       background: #c0392b;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
     }
   }
-  
+
   .contact-form-privacy {
     color: #6c757d;
     line-height: 1.4;
@@ -633,19 +630,19 @@ aspect-ratio: 16/9;
 @media (max-width: 768px) {
   .contact-page {
     padding: 1rem 0;
-    
+
     .contact-info-section,
     .contact-form-section {
       padding: 1.5rem;
       margin-bottom: 1rem;
     }
   }
-  
+
   .contact-info-container {
     .contact-info-item {
       padding: 1rem 0;
     }
-    
+
     .contact-info-icon {
       width: 32px;
       height: 32px;
@@ -664,48 +661,48 @@ aspect-ratio: 16/9;
 .price-page {
   background-color: $light-bg-primary;
   min-height: 100vh;
-  
+
   .price-page-header {
     text-align: center;
     margin-bottom: 3rem;
-    
+
     .price-page-title {
       color: $dark-text-primary;
       font-size: 2.5rem;
       font-weight: 800;
       margin-bottom: 1.5rem;
       line-height: 1.2;
-      
+
       @media (max-width: 768px) {
         font-size: 2rem;
       }
     }
-    
+
     .price-page-description {
       color: $dark-text-secondary;
       font-size: 1.1rem;
       line-height: 1.6;
       max-width: 800px;
       margin: 0 auto;
-      
+
       @media (max-width: 768px) {
         font-size: 1rem;
       }
     }
   }
-  
+
   .section-title {
     color: $dark-text-primary;
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     text-align: center;
-    
+
     @media (max-width: 768px) {
       font-size: 1.5rem;
     }
   }
-  
+
   .price-table-container {
     background: white;
     border-radius: $radius-lg;
@@ -713,14 +710,14 @@ aspect-ratio: 16/9;
     overflow: hidden;
     overflow-x: auto;
     margin-bottom: 2rem;
-    
+
     .price-table {
       width: 100%;
       border-collapse: collapse;
-      
+
       thead {
         background-color: #f8f9fa;
-        
+
         th {
           padding: 1rem;
           text-align: left;
@@ -732,48 +729,48 @@ aspect-ratio: 16/9;
           letter-spacing: 0.5px;
         }
       }
-      
+
       tbody {
         tr {
           border-bottom: 1px solid #e9ecef;
           transition: background-color 0.2s ease;
-          
+
           &:hover {
             background-color: #f8f9fa;
           }
-          
+
           &:last-child {
             border-bottom: none;
           }
         }
-        
+
         td {
           padding: 1rem;
           color: $dark-text-secondary;
           font-size: 0.95rem;
           line-height: 1.4;
-          
+
           &:first-child {
             font-weight: 600;
             color: $dark-text-primary;
           }
         }
       }
-      
+
       // Специальные стили для разных типов таблиц
       &.main-price-table {
         th:first-child {
           background-color: #e3f2fd;
         }
       }
-      
+
       &.additional-works-table,
       &.services-table {
         th:nth-child(3),
         th:nth-child(4) {
           text-align: center;
         }
-        
+
         td:nth-child(3),
         td:nth-child(4) {
           text-align: center;
@@ -783,72 +780,72 @@ aspect-ratio: 16/9;
       }
     }
   }
-  
+
   .advantages-section {
     background: white;
     border-radius: $radius-lg;
     box-shadow: $shadow-md;
     padding: 2rem;
     margin: 2rem 0;
-    
+
     .advantages-title {
       color: $dark-text-primary;
       margin-bottom: 0.5rem;
     }
-    
+
     .advantages-subtitle {
       color: $dark-text-secondary;
       margin-bottom: 2rem;
     }
-    
+
     .negotiation-text {
       color: $dark-text-primary;
       margin-top: 2rem;
     }
   }
-  
+
   .contact-form-section {
     background: white;
     border-radius: $radius-lg;
     box-shadow: $shadow-md;
     padding: 2rem;
     margin-top: 2rem;
-    
+
     .contact-form-wrapper {
       .contact-form-title {
         color: $dark-text-primary;
         font-size: 1.8rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
-        
+
         @media (max-width: 768px) {
           font-size: 1.5rem;
         }
       }
-      
+
       .contact-form-description {
         color: $dark-text-secondary;
         font-size: 1.1rem;
         margin-bottom: 1.5rem;
-        
+
         @media (max-width: 768px) {
           font-size: 1rem;
         }
       }
     }
-    
+
     .contact-info-sidebar {
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 200px;
-      
+
       .negotiation-text {
         color: $dark-text-primary;
         font-size: 1.4rem;
         font-weight: 600;
         text-align: center;
-        
+
         @media (max-width: 768px) {
           font-size: 1.2rem;
           margin-top: 2rem;
@@ -864,19 +861,19 @@ aspect-ratio: 16/9;
     .price-table-container {
       .price-table {
         font-size: 0.85rem;
-        
+
         thead th {
           padding: 0.75rem 0.5rem;
           font-size: 0.8rem;
         }
-        
+
         tbody td {
           padding: 0.75rem 0.5rem;
           font-size: 0.85rem;
         }
       }
     }
-    
+
     .advantages-section,
     .contact-form-section {
       padding: 1.5rem;
