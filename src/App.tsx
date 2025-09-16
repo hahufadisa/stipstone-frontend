@@ -9,7 +9,7 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const PricePage = lazy(() => import("./pages/PricePage"));
-
+const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 function App() {
   return (
     <AppShell>
@@ -21,6 +21,7 @@ function App() {
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/prices" element={<PricePage />} />
           <Route path="/contacts" element={<ContactPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
         </Routes>
       </Suspense>
     </AppShell>
