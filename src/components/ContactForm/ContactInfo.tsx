@@ -1,7 +1,8 @@
 import React from "react";
-import { Stack, Text, Group, Box } from "@mantine/core";
+import { Stack, Text, Group, Box, Button } from "@mantine/core";
 import { motion } from "framer-motion";
 import { contactDetails } from "../../../public/data";
+import { IconBrandTelegram, IconBrandWhatsapp } from "@tabler/icons-react";
 
 const ContactInfo: React.FC = () => {
   return (
@@ -59,6 +60,29 @@ const ContactInfo: React.FC = () => {
                 </Stack>
               </Box>
             </Group>
+            <Box className="contact-info-item">
+              <Group gap="md">
+                <Button
+                  component="a"
+                  href="https://wa.me/79998887766"
+                  target="_blank"
+                  color="green"
+                  leftSection={<IconBrandWhatsapp size={20} />}
+                >
+                  WhatsApp
+                </Button>
+
+                <Button
+                  component="a"
+                  href="https://t.me/yourusername"
+                  target="_blank"
+                  color="blue"
+                  leftSection={<IconBrandTelegram size={20} />}
+                >
+                  Telegram
+                </Button>
+              </Group>
+            </Box>
           </Box>
 
           <Box className="contact-info-item">
@@ -78,6 +102,7 @@ const ContactInfo: React.FC = () => {
           </Box>
         </Stack>
       </Box>
+      {/* Соцсети / мессенджеры */}
     </motion.div>
   );
 };

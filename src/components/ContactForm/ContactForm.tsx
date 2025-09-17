@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TextInput, Textarea, Button, Stack, Text, Box } from "@mantine/core";
 import { motion } from "framer-motion";
 import { textContent } from "../../../public/data";
+import emailjs from "emailjs-com";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -13,10 +14,29 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Здесь будет логика отправки формы
-    console.log("Form submitted:", formData);
-  };
 
+    emailjs
+      .send(
+        "service_ezqfjpj", // Service ID
+        "template_28dbvrd", // Template ID
+        {
+          name: formData.name,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "TKiAwBxVxhLkOWNs-" // Public Key
+      )
+      .then(
+        (result) => {
+          console.log("Email sent:", result.text);
+          alert("Сообщение успешно отправлено!");
+        },
+        (error) => {
+          console.error("Ошибка при отправке:", error.text);
+          alert("Ошибка при отправке сообщения. Попробуйте позже.");
+        }
+      );
+  };
   const handleInputChange = (field: string, value: string | File | null) => {
     setFormData((prev) => ({
       ...prev,

@@ -129,19 +129,19 @@ export const services: Service[] = [
     id: "1",
     title: "ДОПОЛНИТЕЛЬНАЯ СКИДКА",
     description: "ДО -50% НА ВЫБОРОЧНЫЕ ПОЗИЦИИ",
-    image: "/kitchen.jpg",
+    image: "/PortfolioImages/14.jpg",
   },
   {
     id: "2",
     title: "Сезонный марафон скидок",
     description: "Распродажа материала до -55%",
-    image: "/kitchen2.jpg",
+    image: "/PortfolioImages/12.jpg",
   },
   {
     id: "3",
     title: "Изделия из камня",
     description: "В Зеленограде",
-    image: "/kitchen4.jpg",
+    image: "/PortfolioImages/32.jpg",
   },
 ];
 
@@ -297,7 +297,7 @@ export const contactDetails = {
     items: [
       {
         department: "Консультация и расчёт:",
-        phone: "+7 (904) 355-47-89 (WhatsApp/TG)",
+        phone: "+7 (904) 355-47-89",
         hours: "пн-пт: с 9:00 до 18:00",
       },
     ],
