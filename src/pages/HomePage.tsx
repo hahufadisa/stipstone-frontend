@@ -1,8 +1,6 @@
-import { AppShell } from "@mantine/core";
 import HeroSlider from "../components/HeroSlider/HeroSlider";
 import AdvantagesSection from "../components/Sections/AdvantagesSection";
 import ProductsSection from "../components/Sections/ProductsSection";
-import ContactSection from "../components/Sections/ContactSection";
 import SEOHead from "../components/SEO/SEOHead";
 import {
   getOrganizationStructuredData,
@@ -28,14 +26,9 @@ const HomePage = () => {
         structuredData={structuredData}
       />
 
-      <AppShell padding={0}>
-        <AppShell.Main>
-          <HeroSlider />
-          <AdvantagesSection />
-          <ProductsSection />
-          <ContactSection />
-        </AppShell.Main>
-      </AppShell>
+      <HeroSlider />
+      <AdvantagesSection />
+      <ProductsSection />
     </>
   );
 };

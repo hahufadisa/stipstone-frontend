@@ -23,8 +23,7 @@ const HeroSlider = memo(() => {
         <Image
           src="/bg.jpg"
           alt="Hero Background"
-          loading="eager"
-          fetchPriority="high"
+          loading="lazy"
           style={{
             width: "100%",
             height: "100%",

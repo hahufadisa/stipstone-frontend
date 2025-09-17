@@ -1,12 +1,12 @@
 import { useScroll, motion } from "framer-motion";
-import { theme } from "../../styles/theme";
+// import { theme } from "../../styles/theme";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function ScrollLinked() {
   const { scrollYProgress } = useScroll();
   const pathname = useLocation();
-  console.log(scrollYProgress);
+  console.log("s");
 
   useEffect(() => {
     scrollYProgress.set(0);
@@ -25,7 +25,7 @@ export default function ScrollLinked() {
           height: 10,
           originX: 0,
           zIndex: 1000,
-          backgroundColor: theme?.colors?.primary?.[4],
+          backgroundColor: "blue",
         }}
       />
     </>

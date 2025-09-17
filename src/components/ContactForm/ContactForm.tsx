@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextInput, Textarea, Button, Stack, Text, Box } from "@mantine/core";
 import { motion } from "framer-motion";
 import { textContent } from "../../../public/data";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
