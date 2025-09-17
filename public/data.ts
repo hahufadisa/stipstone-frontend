@@ -69,23 +69,23 @@ export const textContent: TextContent = {
     gallery: [
       {
         id: "5",
-        image: "/kitchen.jpg",
+        image: "/PortfolioImages/2.jpg",
       },
       {
         id: "6",
-        image: "/kitchen2.jpg",
+        image: "/PortfolioImages/14.jpg",
       },
       {
         id: "7",
-        image: "/kitchen3.jpg",
+        image: "/PortfolioImages/1.jpg",
       },
       {
         id: "1",
-        image: "/table2.jpg",
+        image: "/PortfolioImages/20.jpg",
       },
       {
         id: "2",
-        image: "/table.jpg",
+        image: "/PortfolioImages/9.jpg",
       },
     ],
     buttonText: "Подробнее →",
@@ -119,7 +119,7 @@ export const navigationItems: NavigationItem[] = [
   { id: "main", label: "ГЛАВНАЯ", href: "/" },
   { id: "catalog", label: "КАТАЛОГ", href: "/catalog" },
   { id: "prices", label: "ЦЕНЫ", href: "/prices" },
-  { id: "payment", label: "УСЛУГИ", href: "#payment" },
+  { id: "calc", label: "КАЛЬКУЛЯТОР", href: "/calc" },
   { id: "portfolio", label: "НАШИ РАБОТЫ", href: "/portfolio" },
   { id: "contacts", label: "КОНТАКТЫ", href: "/contacts" },
 ];
@@ -216,7 +216,7 @@ export const products: Product[] = [
     id: "4",
     title: "КАТАЛОГ КРОМОК И БОРТОВ",
     description: "Декоративные кромки и бортики",
-    image: "/bath2.jpg",
+    image: "/PortfolioImages/8.jpg",
     price: "от 2 500 руб/м.п.",
   },
 ];
