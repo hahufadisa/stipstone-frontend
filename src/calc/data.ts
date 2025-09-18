@@ -6,21 +6,25 @@ export const shapes: Option[] = [
     value: "straight",
     label: "Прямая",
     image: "../CalcImages/Geometry/straight.jpg",
+    icon: "../CalcImages/Geometry/straightIcon.jpg",
   },
   {
     value: "g",
     label: "Г-образная",
     image: "../CalcImages/Geometry/gForm.jpg",
+    icon: "../CalcImages/Geometry/gFormIcon.jpg",
   },
   {
     value: "p",
     label: "П-образная",
     image: "../CalcImages/Geometry/pForm.jpg",
+    icon: "../CalcImages/Geometry/pFormIcon.jpg",
   },
   {
     value: "radial",
     label: "Радиальная",
     image: "../CalcImages/Geometry/radForm.jpg",
+    icon: "../CalcImages/Geometry/radFormIcon.jpg",
   },
 ];
 
