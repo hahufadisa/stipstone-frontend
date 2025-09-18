@@ -94,13 +94,9 @@ const MobileHeader = () => {
                       <Button
                         variant="subtle"
                         color="dark"
+                        w={"100%"}
                         justify="flex-start"
                         onClick={() => setIsOpen(false)}
-                        style={{
-                          height: "48px",
-                          borderRadius: "8px",
-                          fontWeight: 500,
-                        }}
                       >
                         {item.label}
                       </Button>
