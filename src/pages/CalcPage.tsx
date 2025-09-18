@@ -1,5 +1,16 @@
-import { Container, Tabs, Box, Title } from "@mantine/core";
+import {
+  Container,
+  Tabs,
+  Box,
+  Title,
+  Checkbox,
+  Group,
+  Stack,
+  Image,
+  Text,
+} from "@mantine/core";
 import { motion } from "framer-motion";
+import { shapes } from "../calc/data";
 
 const CalcPage = () => {
   return (
@@ -30,7 +41,34 @@ const CalcPage = () => {
             </Tabs.List>
 
             <Tabs.Panel value="size" pt="md">
-              Контент вкладки Размер
+              <Checkbox.Group
+                label="Выберите форму изделия"
+                description="Можно выбрать несколько вариантов"
+              >
+                <Group grow align="stretch">
+                  {shapes.map((shape) => (
+                    <Checkbox.Card
+                      key={shape.value}
+                      radius="md"
+                      p="md"
+                      withBorder
+                    >
+                      <Stack align="center" gap="xs">
+                        <Image
+                          src={shape.image}
+                          alt={shape.label}
+                          height={100}
+                          fit="cover"
+                          radius="sm"
+                        />
+                        <Text size="sm" fw={500}>
+                          {shape.label}
+                        </Text>
+                      </Stack>
+                    </Checkbox.Card>
+                  ))}
+                </Group>
+              </Checkbox.Group>
             </Tabs.Panel>
 
             <Tabs.Panel value="material" pt="md">
