@@ -38,7 +38,7 @@ export default defineConfig({
     },
     host: true
   },
-  esbuild: {
-    drop: ['console', 'debugger']
-  }
+  // esbuild: {
+  //   drop: ['console', 'debugger']
+  // }
 })
