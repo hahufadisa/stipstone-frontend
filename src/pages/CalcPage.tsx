@@ -2,6 +2,7 @@ import { Container, Tabs, Box, Title } from "@mantine/core";
 import { motion } from "framer-motion";
 
 import GeometryPage from "./calcPages/GeometryPage";
+import MaterialPage from "./calcPages/MaterialPage";
 
 const CalcPage = () => {
   return (
@@ -35,6 +36,7 @@ const CalcPage = () => {
 
             <Tabs.Panel value="material" pt="md">
               Контент вкладки Материал
+              <MaterialPage />
             </Tabs.Panel>
 
             <Tabs.Panel value="edge" pt="md">

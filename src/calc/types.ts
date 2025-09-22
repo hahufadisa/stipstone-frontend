@@ -31,3 +31,13 @@ export interface CalcTab {
   id: string;
   label: string;
 }
+
+export interface Materials {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+  category: string;
+  color: string;
+  faktura: string;
+}
