@@ -1,14 +1,22 @@
-import { useState } from "react";
 import { Stack, Image, Text, SimpleGrid, Card, Title } from "@mantine/core";
-import { boards, kromki } from "../../calc/data"; // импорт массивов
+import { boards, kromki } from "../../Calculator/data"; // импорт массивов
+import { useCalculatorStore } from "../../Calculator/store";
+import { Kromki, Boards } from "../../Calculator/types";
 
 const BoardsPage = () => {
-  const [selectedKromka, setSelectedKromka] = useState<string>("0");
-  const [selectedBoard, setSelectedBoard] = useState<string>("0");
+  const { boards: boardsState, updateBoards } = useCalculatorStore();
+  const { selectedKromka, selectedBoard } = boardsState;
+
+  const selectKromka = (kromka: Kromki) => {
+    updateBoards({ selectedKromka: kromka });
+  };
+
+  const selectBoard = (board: Boards) => {
+    updateBoards({ selectedBoard: board });
+  };
 
   return (
     <Stack>
-      {/* Блок: Выберите кромку */}
       <Stack>
         <Title order={3}>Выберите кромку</Title>
         <SimpleGrid cols={5} spacing="md">
@@ -16,10 +24,10 @@ const BoardsPage = () => {
             <Card
               key={k.id}
               withBorder
-              shadow={selectedKromka === k.id ? "md" : "sm"}
+              shadow={selectedKromka?.id === k.id ? "md" : "sm"}
               radius="md"
               padding="sm"
-              onClick={() => setSelectedKromka(k.id)}
+              onClick={() => selectKromka(k)}
               style={{ cursor: "pointer" }}
             >
               <Stack align="center" gap="xs">
@@ -36,7 +44,6 @@ const BoardsPage = () => {
         </SimpleGrid>
       </Stack>
 
-      {/* Блок: Выберите бортик */}
       <Stack>
         <Title order={3}>Выберите бортик</Title>
         <SimpleGrid cols={5} spacing="md">
@@ -44,10 +51,10 @@ const BoardsPage = () => {
             <Card
               key={b.id}
               withBorder
-              shadow={selectedBoard === b.id ? "md" : "sm"}
+              shadow={selectedBoard?.id === b.id ? "md" : "sm"}
               radius="md"
               padding="sm"
-              onClick={() => setSelectedBoard(b.id)}
+              onClick={() => selectBoard(b)}
               style={{ cursor: "pointer" }}
             >
               <Stack align="center" gap="xs">

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Checkbox,
   Stack,
@@ -9,41 +8,97 @@ import {
   Tabs,
   NumberInput,
 } from "@mantine/core";
-import { shapes } from "../../calc/data";
+import { shapes } from "../../Calculator/data";
+import { useCalculatorStore } from "../../Calculator/store";
 
 const GeometryPage = () => {
-  const [selected, setSelected] = useState<string[]>([]);
-  const last = selected[selected.length - 1];
+  const { geometry, updateGeometry } = useCalculatorStore();
+  const {
+    selectedShapes,
+    width,
+    height,
+    sideA,
+    sideB,
+    sideC,
+    sideD,
+    pA,
+    pB,
+    pC,
+    pD,
+    pE,
+    pF,
+    radA,
+    radB,
+  } = geometry;
 
-  // Состояния для размеров
-  const [width, setWidth] = useState<number | undefined>();
-  const [height, setHeight] = useState<number | undefined>();
-
-  // Для Г-образной формы
-  const [sideA, setSideA] = useState<number | undefined>();
-  const [sideB, setSideB] = useState<number | undefined>();
-  const [sideC, setSideC] = useState<number | undefined>();
-  const [sideD, setSideD] = useState<number | undefined>();
-
-  // П-образная форма
-  const [pA, setPA] = useState<number | undefined>();
-  const [pB, setPB] = useState<number | undefined>();
-  const [pC, setPC] = useState<number | undefined>();
-  const [pD, setPD] = useState<number | undefined>();
-  const [pE, setPE] = useState<number | undefined>();
-  const [pF, setPF] = useState<number | undefined>();
-
-  // Радиальная форма
-  const [radA, setRadA] = useState<number | undefined>();
-  const [radB, setRadB] = useState<number | undefined>();
+  const last = selectedShapes[selectedShapes.length - 1];
   const selectedShape = shapes.find((s) => s.value === last);
+
+  const setSelected = (newSelected: string[]) => {
+    updateGeometry({ selectedShapes: newSelected });
+  };
+
+  const setWidth = (value: number | undefined) => {
+    updateGeometry({ width: value });
+  };
+
+  const setHeight = (value: number | undefined) => {
+    updateGeometry({ height: value });
+  };
+
+  const setSideA = (value: number | undefined) => {
+    updateGeometry({ sideA: value });
+  };
+
+  const setSideB = (value: number | undefined) => {
+    updateGeometry({ sideB: value });
+  };
+
+  const setSideC = (value: number | undefined) => {
+    updateGeometry({ sideC: value });
+  };
+
+  const setSideD = (value: number | undefined) => {
+    updateGeometry({ sideD: value });
+  };
+
+  const setPA = (value: number | undefined) => {
+    updateGeometry({ pA: value });
+  };
+
+  const setPB = (value: number | undefined) => {
+    updateGeometry({ pB: value });
+  };
+
+  const setPC = (value: number | undefined) => {
+    updateGeometry({ pC: value });
+  };
+
+  const setPD = (value: number | undefined) => {
+    updateGeometry({ pD: value });
+  };
+
+  const setPE = (value: number | undefined) => {
+    updateGeometry({ pE: value });
+  };
+
+  const setPF = (value: number | undefined) => {
+    updateGeometry({ pF: value });
+  };
+
+  const setRadA = (value: number | undefined) => {
+    updateGeometry({ radA: value });
+  };
+
+  const setRadB = (value: number | undefined) => {
+    updateGeometry({ radB: value });
+  };
 
   return (
     <Tabs.Panel value="size" pt="md">
       <Grid align="stretch">
-        {/* Левая колонка с чекбоксами */}
         <Grid.Col span={2}>
-          <Checkbox.Group value={selected} onChange={setSelected}>
+          <Checkbox.Group value={selectedShapes} onChange={setSelected}>
             <Stack align="stretch" gap="md">
               {shapes.map((shape) => (
                 <Checkbox.Card
@@ -73,7 +128,6 @@ const GeometryPage = () => {
           </Checkbox.Group>
         </Grid.Col>
 
-        {/* Правая колонка — картинка с абсолютными инпутами */}
         <Grid.Col span={9}>
           <Center style={{ minHeight: 220, position: "relative" }}>
             {last ? (
@@ -86,7 +140,6 @@ const GeometryPage = () => {
                   radius="md"
                 />
 
-                {/* Абсолютные инпуты только для прямой формы */}
                 {last === "straight" && (
                   <>
                     <NumberInput
@@ -122,7 +175,7 @@ const GeometryPage = () => {
                     />
                   </>
                 )}
-                {/* Абсолютные инпуты для Г-образной формы */}
+
                 {last === "g" && (
                   <>
                     <NumberInput
@@ -190,7 +243,7 @@ const GeometryPage = () => {
                     />
                   </>
                 )}
-                {/* П-образная форма */}
+
                 {last === "p" && (
                   <>
                     <NumberInput
@@ -290,7 +343,7 @@ const GeometryPage = () => {
                     />
                   </>
                 )}
-                {/* Радиальная форма */}
+
                 {last === "radial" && (
                   <>
                     <NumberInput

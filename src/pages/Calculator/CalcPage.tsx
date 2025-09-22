@@ -1,11 +1,12 @@
 import { Container, Tabs, Box, Title } from "@mantine/core";
 import { motion } from "framer-motion";
 
-import GeometryPage from "./calcPages/GeometryPage";
-import MaterialPage from "./calcPages/MaterialPage";
-import BoardsPage from "./calcPages/BoardsPage";
-import WashesPage from "./calcPages/WashesPage";
-import ExtraWorksPage from "./calcPages/ExtraWorksPage";
+import GeometryPage from "./GeometryPage";
+import MaterialPage from "./MaterialPage";
+import BoardsPage from "./BoardsPage";
+import WashesPage from "./WashesPage";
+import ExtraWorksPage from "./ExtraWorksPage";
+import ResultPage from "./ResultPage";
 
 const CalcPage = () => {
   return (
@@ -14,10 +15,10 @@ const CalcPage = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Container size="xl" mt="xl">
+      <Container size="xl">
         <Box className="calc-page">
           <Title order={2} mb="lg" ta="center">
-            КАЛЬКУЛЯТОР
+            Калькулятор
           </Title>
 
           <Tabs
@@ -54,7 +55,7 @@ const CalcPage = () => {
             </Tabs.Panel>
 
             <Tabs.Panel value="result" pt="md">
-              Контент вкладки Результат
+              <ResultPage />
             </Tabs.Panel>
           </Tabs>
         </Box>

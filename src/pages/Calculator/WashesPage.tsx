@@ -1,18 +1,23 @@
-import { useState } from "react";
 import { Stack, Image, Text, SimpleGrid, Card, Title } from "@mantine/core";
-import { washes } from "../../calc/data"; // импорт массива Washes
+import { washes } from "../../Calculator/data"; // импорт массива Washes
+import { useCalculatorStore } from "../../Calculator/store";
+import { Washes } from "../../Calculator/types";
 
 const WashesPage = () => {
-  const [selectedWash, setSelectedWash] = useState<string>("_0");
+  const { wash, updateWash } = useCalculatorStore();
+  const { selectedWash } = wash;
 
-  // Флаг, разрешающий выбирать плитки после первой группы
+  const selectWash = (washItem: Washes) => {
+    updateWash({ selectedWash: washItem });
+  };
+
   const allowSecondGroup = washes.find(
-    (w) => w.name === "Интегрированная мойка из камня" && selectedWash === w.id
+    (w) =>
+      w.name === "Интегрированная мойка из камня" && selectedWash?.id === w.id
   );
 
   return (
     <Stack>
-      {/* Первая группа: первые 5 плиток */}
       <Stack>
         <Title order={3}>Выберите вариант мойки</Title>
         <SimpleGrid cols={5} spacing="md">
@@ -20,14 +25,21 @@ const WashesPage = () => {
             <Card
               key={w.id}
               withBorder
-              shadow={selectedWash === w.id ? "md" : "sm"}
+              shadow={selectedWash?.id === w.id ? "md" : "sm"}
               radius="md"
+              bg={selectedWash?.id === w.id ? "white" : "gray.1"}
               padding="sm"
-              onClick={() => setSelectedWash(w.id)}
+              onClick={() => selectWash(w)}
               style={{ cursor: "pointer" }}
             >
               <Stack align="center" gap="xs">
-                <Image src={w.image} alt={w.name} height={80} fit="contain" />
+                <Image
+                  src={w.image}
+                  alt={w.name}
+                  height={80}
+                  fit="contain"
+                  radius={"xs"}
+                />
                 <Text fw={500} size="sm">
                   {w.name}
                 </Text>
@@ -40,10 +52,8 @@ const WashesPage = () => {
         </SimpleGrid>
       </Stack>
 
-      {/* Отступ */}
       <div style={{ height: 20 }} />
 
-      {/* Вторая группа: все остальные плитки */}
       <Stack>
         <SimpleGrid cols={5} spacing="md">
           {washes.slice(5).map((w) => {
@@ -52,10 +62,10 @@ const WashesPage = () => {
               <Card
                 key={w.id}
                 withBorder
-                shadow={selectedWash === w.id ? "md" : "sm"}
+                shadow={selectedWash?.id === w.id ? "md" : "sm"}
                 radius="md"
                 padding="sm"
-                onClick={() => !disabled && setSelectedWash(w.id)}
+                onClick={() => !disabled && selectWash(w)}
                 style={{
                   cursor: disabled ? "not-allowed" : "pointer",
                   opacity: disabled ? 0.4 : 1,

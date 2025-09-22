@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Grid,
   Stack,
@@ -16,8 +15,9 @@ import {
   materialsHimacs,
   materialsGrandex,
   materialsHyundai,
-} from "../../calc/data";
-import { Materials } from "../../calc/types";
+} from "../../Calculator/data";
+import { Materials } from "../../Calculator/types";
+import { useCalculatorStore } from "../../Calculator/store";
 
 const brands = [
   {
@@ -39,7 +39,7 @@ const brands = [
     value: "hanex",
     label: "Hyundai",
     image: "../../public/CalcImages/Brands/hanex.jpg",
-  }, // Hyundai
+  },
   {
     value: "akrilika",
     label: "Akrilka",
@@ -47,7 +47,6 @@ const brands = [
   },
 ];
 
-// Селекты фильтров
 const fakturaOptions = [
   { value: "any", label: "Любая" },
   { value: "монотонный", label: "Монотонный" },
@@ -65,7 +64,6 @@ const colorOptions = [
   { value: "черный", label: "Черный" },
 ];
 
-// Мапа бренд → массив материалов
 const materialsByBrand: Record<string, Materials[]> = {
   akrilika: materialsAkrilka,
   hanex: materialsHyundai,
@@ -75,11 +73,25 @@ const materialsByBrand: Record<string, Materials[]> = {
 };
 
 const MaterialPage = () => {
-  const [brand, setBrand] = useState<string>("grandex");
-  const [faktura, setFaktura] = useState<string>("any");
-  const [color, setColor] = useState<string>("any");
+  const { material, updateMaterial } = useCalculatorStore();
+  const { brand, faktura, color, selectedMaterial } = material;
 
-  // Фильтрация материалов по выбранному бренду и фильтрам
+  const setBrand = (value: string) => {
+    updateMaterial({ brand: value });
+  };
+
+  const setFaktura = (value: string) => {
+    updateMaterial({ faktura: value });
+  };
+
+  const setColor = (value: string) => {
+    updateMaterial({ color: value });
+  };
+
+  const selectMaterial = (mat: Materials) => {
+    updateMaterial({ selectedMaterial: mat });
+  };
+
   const filtered = (brand ? materialsByBrand[brand] : []).filter(
     (mat) =>
       (faktura === "any" || mat.faktura === faktura) &&
@@ -88,7 +100,6 @@ const MaterialPage = () => {
 
   return (
     <Grid align="stretch" gutter="lg">
-      {/* Левая колонка с брендами */}
       <Grid.Col span={2}>
         <Radio.Group value={brand} onChange={setBrand}>
           <Stack gap="md">
@@ -108,10 +119,8 @@ const MaterialPage = () => {
         </Radio.Group>
       </Grid.Col>
 
-      {/* Правая колонка */}
       <Grid.Col span={10}>
         <Stack gap="md">
-          {/* Фильтры */}
           <Group grow>
             <Select
               label="Фактура"
@@ -127,16 +136,17 @@ const MaterialPage = () => {
             />
           </Group>
 
-          {/* Сетка плиток */}
           <div style={{ maxHeight: 700, overflowY: "auto" }}>
             <SimpleGrid cols={5} spacing="md">
               {filtered.map((mat) => (
                 <Card
                   key={mat.id}
                   withBorder
-                  shadow="sm"
+                  shadow={selectedMaterial?.id === mat.id ? "md" : "sm"}
                   radius="md"
                   padding="sm"
+                  onClick={() => selectMaterial(mat)}
+                  style={{ cursor: "pointer" }}
                 >
                   <Stack align="center" gap="xs">
                     <Image
