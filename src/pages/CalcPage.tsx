@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 
 import GeometryPage from "./calcPages/GeometryPage";
 import MaterialPage from "./calcPages/MaterialPage";
+import BoardsPage from "./calcPages/BoardsPage";
+import WashesPage from "./calcPages/WashesPage";
+import ExtraWorksPage from "./calcPages/ExtraWorksPage";
 
 const CalcPage = () => {
   return (
@@ -35,20 +38,19 @@ const CalcPage = () => {
             <GeometryPage />
 
             <Tabs.Panel value="material" pt="md">
-              Контент вкладки Материал
               <MaterialPage />
             </Tabs.Panel>
 
             <Tabs.Panel value="edge" pt="md">
-              Контент вкладки Кромка и бортик
+              <BoardsPage />
             </Tabs.Panel>
 
             <Tabs.Panel value="sink" pt="md">
-              Контент вкладки Мойка
+              <WashesPage />
             </Tabs.Panel>
 
             <Tabs.Panel value="extra" pt="md">
-              Контент вкладки Доп. работы
+              <ExtraWorksPage />
             </Tabs.Panel>
 
             <Tabs.Panel value="result" pt="md">

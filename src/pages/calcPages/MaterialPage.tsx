@@ -19,13 +19,32 @@ import {
 } from "../../calc/data";
 import { Materials } from "../../calc/types";
 
-// Список брендов для выбора слева
 const brands = [
-  { value: "grandex", label: "Grandex", image: "/brands/grandex.png" },
-  { value: "staron", label: "Staron", image: "/brands/staron.png" },
-  { value: "himacs", label: "Himacs", image: "/brands/himacs.png" },
-  { value: "hanex", label: "Hyundai", image: "/brands/hanex.png" }, // Hyundai
-  { value: "akrilika", label: "Akrilka", image: "/brands/akrilika.png" },
+  {
+    value: "grandex",
+    label: "Grandex",
+    image: "../../public/CalcImages/Brands/grandex.jpg",
+  },
+  {
+    value: "staron",
+    label: "Staron",
+    image: "../../public/CalcImages/Brands/staron.jpg",
+  },
+  {
+    value: "himacs",
+    label: "Himacs",
+    image: "../../public/CalcImages/Brands/himacs.jpg",
+  },
+  {
+    value: "hanex",
+    label: "Hyundai",
+    image: "../../public/CalcImages/Brands/hanex.jpg",
+  }, // Hyundai
+  {
+    value: "akrilika",
+    label: "Akrilka",
+    image: "../../public/CalcImages/Brands/akrilika.png",
+  },
 ];
 
 // Селекты фильтров
@@ -82,7 +101,6 @@ const MaterialPage = () => {
                     height={50}
                     fit="contain"
                   />
-                  <Text size="sm">{b.label}</Text>
                 </Stack>
               </Radio.Card>
             ))}
@@ -110,32 +128,34 @@ const MaterialPage = () => {
           </Group>
 
           {/* Сетка плиток */}
-          <SimpleGrid cols={5} spacing="md">
-            {filtered.map((mat) => (
-              <Card
-                key={mat.id}
-                withBorder
-                shadow="sm"
-                radius="md"
-                padding="sm"
-              >
-                <Stack align="center" gap="xs">
-                  <Image
-                    src={mat.image}
-                    alt={mat.name}
-                    height={80}
-                    fit="contain"
-                  />
-                  <Text fw={500} size="sm">
-                    {mat.name}
-                  </Text>
-                  <Text size="xs" c="dimmed">
-                    {mat.price} ₽
-                  </Text>
-                </Stack>
-              </Card>
-            ))}
-          </SimpleGrid>
+          <div style={{ maxHeight: 700, overflowY: "auto" }}>
+            <SimpleGrid cols={5} spacing="md">
+              {filtered.map((mat) => (
+                <Card
+                  key={mat.id}
+                  withBorder
+                  shadow="sm"
+                  radius="md"
+                  padding="sm"
+                >
+                  <Stack align="center" gap="xs">
+                    <Image
+                      src={mat.image}
+                      alt={mat.name}
+                      height={80}
+                      fit="contain"
+                    />
+                    <Text fw={500} size="sm">
+                      {mat.name}
+                    </Text>
+                    <Text size="xs" c="dimmed">
+                      {mat.price} ₽
+                    </Text>
+                  </Stack>
+                </Card>
+              ))}
+            </SimpleGrid>
+          </div>
         </Stack>
       </Grid.Col>
     </Grid>

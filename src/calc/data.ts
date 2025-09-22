@@ -1,4 +1,4 @@
-import { Materials, Option } from "./types";
+import { Boards, Kromki, Materials, Option, Washes } from "./types";
 
 // Формы изделия
 export const shapes: Option[] = [
@@ -4677,5 +4677,243 @@ export const materialsAkrilka: Materials[] = [
     category: "akrilika",
     color: "коричневый",
     faktura: "разводы",
+  },
+];
+
+export const washes: Washes[] = [
+  {
+    id: "_0",
+    name: "Без выреза",
+    price: "0",
+    image: "../../public/CalcImages/Washes/1.png",
+  },
+  {
+    id: "_1",
+    name: "Вырез для мойки",
+    price: "750",
+    image: "../../public/CalcImages/Washes/2.png",
+  },
+  {
+    id: "_2",
+    name: "Вырез + монтаж накладной мойки",
+    price: "1750",
+    image: "../../public/CalcImages/Washes/3.png",
+  },
+  {
+    id: "_3",
+    name: "Вырез + вклейка мойки под столешницу",
+    price: "3000",
+    image: "../../public/CalcImages/Washes/4.png",
+  },
+  {
+    id: "_4",
+    name: "Интегрированная мойка из камня",
+    price: "0",
+    image: "../../public/CalcImages/Washes/5.png",
+  },
+
+  ////////////////////////////////////////////////////////////////////
+  {
+    id: "_0",
+    name: "СК524 (524х439 глубина 212)",
+    price: "37000",
+    image: "../../public/CalcImages/Washes/CK_524_524х439x212.png",
+  },
+  {
+    id: "_1",
+    name: "СК449 (449х370 глубина 176)",
+    price: "29000",
+    image: "../../public/CalcImages/Washes/223232.png",
+  },
+  {
+    id: "_2",
+    name: "СК439Ц (439х439 шлубина 211)",
+    price: "29000",
+    image: "../../public/CalcImages/Washes/СК_439Ц_(439х439шлубина211).png",
+  },
+  {
+    id: "_3",
+    name: "СК440 (440х440 глубина 182)",
+    price: "29000",
+    image: "../../public/CalcImages/Washes/123123.png",
+  },
+  {
+    id: "_4",
+    name: "СК530 (530х440 глубина 182)",
+    price: "37000",
+    image: "../../public/CalcImages/Washes/12312312333.png",
+  },
+  {
+    id: "_5",
+    name: "СК494Р (494х354 глубина 110)",
+    price: "21000",
+    image: "../../public/CalcImages/Washes/22.png",
+  },
+  {
+    id: "_6",
+    name: "СК565 (565х380 глубина 125)",
+    price: "21000",
+    image: "../../public/CalcImages/Washes/333.png",
+  },
+  {
+    id: "_7",
+    name: "СК594Л (594х354 глубина 143)",
+    price: "31000",
+    image: "../../public/CalcImages/Washes/444.png",
+  },
+  {
+    id: "_8",
+    name: "Щелевая раковина (индивидуальные размеры)",
+    price: "38000",
+    image: "../../public/CalcImages/Washes/555.png",
+  },
+  {
+    id: "_9",
+    name: "Щелевая раковина (индивидуальные размеры)",
+    price: "38000",
+    image: "../../public/CalcImages/Washes/5554.png",
+  },
+];
+export const kromki: Kromki[] = [
+  {
+    id: "0",
+    name: "Скругление R1-R2",
+    price: "0",
+    image: "../../public/CalcImages/BoardTypes/r1r2.jpg",
+  },
+  {
+    id: "1",
+    name: "Скругление R3-R15",
+    price: "300",
+    image: "../../public/CalcImages/BoardTypes/Скругление_.jpg",
+  },
+  {
+    id: "2",
+    name: "Радиусная",
+    price: "500",
+    image: "../../public/CalcImages/BoardTypes/Радиусная_.jpg",
+  },
+  {
+    id: "3",
+    name: "Под 45 градусов",
+    price: "500",
+    image: "../../public/CalcImages/BoardTypes/45градусов_.jpg",
+  },
+  {
+    id: "4",
+    name: "Антиперелив",
+    price: "2500",
+    image: "../../public/CalcImages/BoardTypes/Антиперелив_.jpg",
+  },
+  {
+    id: "5",
+    name: "Инкрустация",
+    price: "3800",
+    image: "../../public/CalcImages/BoardTypes/Инкрустация_.jpg",
+  },
+  {
+    id: "6",
+    name: "Фигурная 1",
+    price: "1500",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№_.jpg",
+  },
+  {
+    id: "7",
+    name: "Фигурная 2",
+    price: "1500",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№2_.jpg",
+  },
+  {
+    id: "8",
+    name: "Фигурная 3",
+    price: "1500",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№3_.jpg",
+  },
+  {
+    id: "9",
+    name: "Фигурная 4",
+    price: "1500",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№4_.jpg",
+  },
+  {
+    id: "10",
+    name: "Фигурная 5",
+    price: "1000",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№5_.jpg",
+  },
+  {
+    id: "11",
+    name: "Фигурная 6",
+    price: "2000",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№6_.jpg",
+  },
+  {
+    id: "12",
+    name: "Фигурная 7",
+    price: "4500",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№7_.jpg",
+  },
+  {
+    id: "13",
+    name: "Фигурная 8",
+    price: "2000",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№8_.jpg",
+  },
+  {
+    id: "14",
+    name: "Фигурная 9",
+    price: "4500",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№9_.jpg",
+  },
+  {
+    id: "15",
+    name: "Фигурная 10",
+    price: "3800",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№10_.jpg",
+  },
+  {
+    id: "16",
+    name: "Фигурная 11",
+    price: "4500",
+    image: "../../public/CalcImages/BoardTypes/Фигурная№11_.jpg",
+  },
+  {
+    id: "0",
+    name: "Без бортика",
+    price: "0",
+    image: "../../public/CalcImages/BoardTypes/BezBordera.jpg",
+  },
+];
+
+export const boards: Boards[] = [
+  {
+    id: "0",
+    name: "Без Бортика",
+    price: "0",
+    image: "../../public/CalcImages/BoardTypes/r1r2.jpg",
+  },
+  {
+    id: "1",
+    name: "Накладной стандарт",
+    price: "700",
+    image: "../../public/CalcImages/BoardTypes/NaklStandart.jpg",
+  },
+  {
+    id: "2",
+    name: "Накладной галтель",
+    price: "700",
+    image: "../../public/CalcImages/BoardTypes/NaklGaltel.jpg",
+  },
+  {
+    id: "3",
+    name: "Литой прямой",
+    price: "1500",
+    image: "../../public/CalcImages/BoardTypes/LitPraymoy.jpg",
+  },
+  {
+    id: "4",
+    name: "Литой плавный",
+    price: "2500",
+    image: "../../public/CalcImages/BoardTypes/LitPlav.jpg",
   },
 ];

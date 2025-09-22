@@ -41,3 +41,24 @@ export interface Materials {
   color: string;
   faktura: string;
 }
+
+export interface Washes {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+}
+
+export interface Kromki {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+}
+
+export interface Boards {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+}
