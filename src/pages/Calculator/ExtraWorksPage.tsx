@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Stack, Checkbox, Title, Divider } from "@mantine/core";
+import { Stack, Checkbox, Title, Divider, Group, Text } from "@mantine/core";
+import { useCalculatorStore } from "../../Calculator/store";
 
-const extraWorks = [
+const extraWorksData = [
   "Каплесборник (пропил)",
   "Изготовление каменного подгиба",
   "Усиленная сплошная подложка из фанеры",
@@ -16,20 +16,24 @@ const extraWorks = [
   "Вентиляционные сквозные проточки",
   "Бесшовная склейка элементов изделия (стыки)",
   "Бесшовная склейка элементов изделия в ус (стыки)",
-  // теперь отделяемые три последних
   "Монтаж",
   "Доставка (в пределах города Москва)",
   "Удалённость от города",
 ];
 
 const ExtraWorksPage = () => {
-  const [selected, setSelected] = useState<string[]>([]);
+  const { extraWorks, updateExtraWorks } = useCalculatorStore();
+  const { selectedWorks } = extraWorks;
 
   const toggleOption = (option: string) => {
-    if (selected.includes(option)) {
-      setSelected(selected.filter((o) => o !== option));
+    if (selectedWorks.includes(option)) {
+      updateExtraWorks({
+        selectedWorks: selectedWorks.filter((o) => o !== option),
+      });
     } else {
-      setSelected([...selected, option]);
+      updateExtraWorks({
+        selectedWorks: [...selectedWorks, option],
+      });
     }
   };
 
@@ -37,17 +41,26 @@ const ExtraWorksPage = () => {
     <Stack>
       <Title order={3}>Выберите дополнительные работы</Title>
       <Stack>
-        {extraWorks.map((work, index) => (
+        {extraWorksData.map((work, index) => (
           <div key={work}>
-            {/* Вставляем Divider перед последними 3 элементами */}
-            {index === extraWorks.length - 3 && (
+            {index === extraWorksData.length - 3 && (
               <Divider my="sm" labelPosition="center" />
             )}
-            <Checkbox
-              label={work}
-              checked={selected.includes(work)}
-              onChange={() => toggleOption(work)}
-            />
+            <Group justify="space-between" align="center">
+              <Checkbox
+                label={work}
+                checked={selectedWorks.includes(work)}
+                onChange={() => toggleOption(work)}
+                style={{ flex: 1 }}
+              />
+              <Text
+                size="sm"
+                c="dimmed"
+                style={{ minWidth: "80px", textAlign: "right" }}
+              >
+                1000 ₽
+              </Text>
+            </Group>
           </div>
         ))}
       </Stack>
