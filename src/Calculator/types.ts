@@ -24,6 +24,7 @@ export interface Option {
   label: string;
   image?: string;
   icon?: string;
+  price?: number;
 }
 
 // Вкладка калькулятора

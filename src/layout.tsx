@@ -16,7 +16,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <AppShell>
       <MobileHeader />
       <AppShell.Main>{children}</AppShell.Main>
-      <ContactSection />
+      {pathname !== "/calc" && <ContactSection />}
     </AppShell>
   );
 };

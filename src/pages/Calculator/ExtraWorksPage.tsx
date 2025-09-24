@@ -1,4 +1,4 @@
-import { Stack, Checkbox, Title, Divider } from "@mantine/core";
+import { Stack, Checkbox, Title, Divider, Group, Text } from "@mantine/core";
 import { useCalculatorStore } from "../../Calculator/store";
 
 const extraWorksData = [
@@ -46,11 +46,21 @@ const ExtraWorksPage = () => {
             {index === extraWorksData.length - 3 && (
               <Divider my="sm" labelPosition="center" />
             )}
-            <Checkbox
-              label={work}
-              checked={selectedWorks.includes(work)}
-              onChange={() => toggleOption(work)}
-            />
+            <Group justify="space-between" align="center">
+              <Checkbox
+                label={work}
+                checked={selectedWorks.includes(work)}
+                onChange={() => toggleOption(work)}
+                style={{ flex: 1 }}
+              />
+              <Text
+                size="sm"
+                c="dimmed"
+                style={{ minWidth: "80px", textAlign: "right" }}
+              >
+                1000 ₽
+              </Text>
+            </Group>
           </div>
         ))}
       </Stack>

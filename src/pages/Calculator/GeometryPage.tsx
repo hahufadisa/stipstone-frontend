@@ -1,5 +1,5 @@
 import {
-  Checkbox,
+  Radio,
   Stack,
   Image,
   Text,
@@ -12,9 +12,9 @@ import { shapes } from "../../Calculator/data";
 import { useCalculatorStore } from "../../Calculator/store";
 
 const GeometryPage = () => {
-  const { geometry, updateGeometry } = useCalculatorStore();
+  const { geometry, updateGeometry, selectShape } = useCalculatorStore();
   const {
-    selectedShapes,
+    selectedShape,
     width,
     height,
     sideA,
@@ -31,11 +31,12 @@ const GeometryPage = () => {
     radB,
   } = geometry;
 
-  const last = selectedShapes[selectedShapes.length - 1];
-  const selectedShape = shapes.find((s) => s.value === last);
+  const selectedShapeData = shapes.find((s) => s.value === selectedShape);
 
-  const setSelected = (newSelected: string[]) => {
-    updateGeometry({ selectedShapes: newSelected });
+  const handleShapeSelect = (value: string | null) => {
+    if (value) {
+      selectShape(value);
+    }
   };
 
   const setWidth = (value: number | undefined) => {
@@ -98,10 +99,10 @@ const GeometryPage = () => {
     <Tabs.Panel value="size" pt="md">
       <Grid align="stretch">
         <Grid.Col span={2}>
-          <Checkbox.Group value={selectedShapes} onChange={setSelected}>
+          <Radio.Group value={selectedShape || ""} onChange={handleShapeSelect}>
             <Stack align="stretch" gap="md">
               {shapes.map((shape) => (
-                <Checkbox.Card
+                <Radio.Card
                   key={shape.value}
                   value={String(shape.value)}
                   radius="md"
@@ -121,30 +122,35 @@ const GeometryPage = () => {
                     <Text size="sm" fw={500}>
                       {shape.label}
                     </Text>
+                    {shape.price && (
+                      <Text size="xs" c="dimmed">
+                        {shape.price} ₽/м²
+                      </Text>
+                    )}
                   </Stack>
-                </Checkbox.Card>
+                </Radio.Card>
               ))}
             </Stack>
-          </Checkbox.Group>
+          </Radio.Group>
         </Grid.Col>
 
         <Grid.Col span={9}>
           <Center style={{ minHeight: 220, position: "relative" }}>
-            {last ? (
+            {selectedShape ? (
               <>
                 <Image
-                  src={selectedShape?.image}
+                  src={selectedShapeData?.image}
                   alt="Выбранная форма"
                   height={200}
                   fit="contain"
                   radius="md"
                 />
 
-                {last === "straight" && (
+                {selectedShape === "straight" && (
                   <>
                     <NumberInput
                       hideControls
-                      placeholder="Длина"
+                      placeholder="Длина (м)"
                       value={width}
                       onChange={(val) =>
                         setWidth(typeof val === "number" ? val : undefined)
@@ -160,7 +166,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="Ширина"
+                      placeholder="Ширина (м)"
                       value={height}
                       onChange={(val) =>
                         setHeight(typeof val === "number" ? val : undefined)
@@ -176,11 +182,11 @@ const GeometryPage = () => {
                   </>
                 )}
 
-                {last === "g" && (
+                {selectedShape === "g" && (
                   <>
                     <NumberInput
                       hideControls
-                      placeholder="A"
+                      placeholder="A (м)"
                       value={sideA}
                       onChange={(val) =>
                         setSideA(typeof val === "number" ? val : undefined)
@@ -196,7 +202,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder=" B"
+                      placeholder="B (м)"
                       value={sideB}
                       onChange={(val) =>
                         setSideB(typeof val === "number" ? val : undefined)
@@ -212,7 +218,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="C"
+                      placeholder="C (м)"
                       value={sideC}
                       onChange={(val) =>
                         setSideC(typeof val === "number" ? val : undefined)
@@ -228,7 +234,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="D"
+                      placeholder="D (м)"
                       value={sideD}
                       onChange={(val) =>
                         setSideD(typeof val === "number" ? val : undefined)
@@ -244,11 +250,11 @@ const GeometryPage = () => {
                   </>
                 )}
 
-                {last === "p" && (
+                {selectedShape === "p" && (
                   <>
                     <NumberInput
                       hideControls
-                      placeholder="A"
+                      placeholder="A (м)"
                       value={pA}
                       onChange={(val) =>
                         setPA(typeof val === "number" ? val : undefined)
@@ -264,7 +270,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="B"
+                      placeholder="B (м)"
                       value={pB}
                       onChange={(val) =>
                         setPB(typeof val === "number" ? val : undefined)
@@ -280,7 +286,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="C"
+                      placeholder="C (м)"
                       value={pC}
                       onChange={(val) =>
                         setPC(typeof val === "number" ? val : undefined)
@@ -296,7 +302,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="D"
+                      placeholder="D (м)"
                       value={pD}
                       onChange={(val) =>
                         setPD(typeof val === "number" ? val : undefined)
@@ -312,7 +318,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="E"
+                      placeholder="E (м)"
                       value={pE}
                       onChange={(val) =>
                         setPE(typeof val === "number" ? val : undefined)
@@ -328,7 +334,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="F"
+                      placeholder="F (м)"
                       value={pF}
                       onChange={(val) =>
                         setPF(typeof val === "number" ? val : undefined)
@@ -344,11 +350,11 @@ const GeometryPage = () => {
                   </>
                 )}
 
-                {last === "radial" && (
+                {selectedShape === "radial" && (
                   <>
                     <NumberInput
                       hideControls
-                      placeholder="A"
+                      placeholder="A (м)"
                       value={radA}
                       onChange={(val) =>
                         setRadA(typeof val === "number" ? val : undefined)
@@ -364,7 +370,7 @@ const GeometryPage = () => {
 
                     <NumberInput
                       hideControls
-                      placeholder="B"
+                      placeholder="B (м)"
                       value={radB}
                       onChange={(val) =>
                         setRadB(typeof val === "number" ? val : undefined)

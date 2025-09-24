@@ -1,5 +1,32 @@
 import { Boards, Kromki, Materials, Option, Washes } from "./types";
 
+// Функции для расчета площади фигур (все размеры в метрах)
+export const calculateArea = {
+  // Прямоугольная форма: S = width * height
+  straight: (width?: number, height?: number): number => {
+    if (!width || !height) return 0;
+    return width * height; // размеры уже в метрах
+  },
+
+  // Г-образная форма: S = sideA * sideB + sideC * sideD
+  g: (sideA?: number, sideB?: number, sideC?: number, sideD?: number): number => {
+    if (!sideA || !sideB || !sideC || !sideD) return 0;
+    return (sideA * sideB) + (sideC * sideD); // размеры уже в метрах
+  },
+
+  // П-образная форма: S = pA * pB + pC * pD + pE * pF
+  p: (pA?: number, pB?: number, pC?: number, pD?: number, pE?: number, pF?: number): number => {
+    if (!pA || !pB || !pC || !pD || !pE || !pF) return 0;
+    return (pA * pB) + (pC * pD) + (pE * pF); // размеры уже в метрах
+  },
+
+  // Радиальная форма: S = π * radA * radB (эллипс)
+  radial: (radA?: number, radB?: number): number => {
+    if (!radA || !radB) return 0;
+    return Math.PI * radA * radB; // размеры уже в метрах
+  }
+};
+
 // Формы изделия
 export const shapes: Option[] = [
   {
@@ -7,24 +34,28 @@ export const shapes: Option[] = [
     label: "Прямая",
     image: "../CalcImages/Geometry/straight.jpg",
     icon: "../CalcImages/Geometry/straightIcon.jpg",
+    price: 1000,
   },
   {
     value: "g",
     label: "Г-образная",
     image: "../CalcImages/Geometry/gForm.jpg",
     icon: "../CalcImages/Geometry/gFormIcon.jpg",
+    price: 2000,
   },
   {
     value: "p",
     label: "П-образная",
     image: "../CalcImages/Geometry/pForm.jpg",
     icon: "../CalcImages/Geometry/pFormIcon.jpg",
+    price: 3000,
   },
   {
     value: "radial",
     label: "Радиальная",
     image: "../CalcImages/Geometry/radForm.jpg",
     icon: "../CalcImages/Geometry/radFormIcon.jpg",
+    price: 4000,
   },
 ];
 

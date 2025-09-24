@@ -11,10 +11,22 @@ import {
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import { useCalculatorStore } from "../../Calculator/store";
+import { shapes } from "../../Calculator/data";
 
 const ResultPage = () => {
-  const { getCalculatorData, geometry, material, boards, wash, extraWorks } =
-    useCalculatorStore();
+  const {
+    getCalculatorData,
+    geometry,
+    material,
+    boards,
+    wash,
+    extraWorks,
+    getArea,
+    getShapePrice,
+    getTotalShapePrice,
+    getExtraWorksPrice,
+    getTotalPrice,
+  } = useCalculatorStore();
 
   const generatePDF = () => {
     // Создаем PDF в формате A4
@@ -138,9 +150,12 @@ const ResultPage = () => {
 
     doc.setFontSize(9);
     doc.setFont("helvetica", "normal");
-    if (geometry.selectedShapes.length > 0) {
+    if (geometry.selectedShape) {
+      const shapeLabel =
+        shapes.find((s) => s.value === geometry.selectedShape)?.label ||
+        geometry.selectedShape;
       addText(
-        `Forma: ${convertToLatin(geometry.selectedShapes.join(", "))}`,
+        `Forma: ${convertToLatin(shapeLabel)}`,
         leftMargin + 5,
         yPosition
       );
@@ -148,7 +163,7 @@ const ResultPage = () => {
     }
     if (geometry.width && geometry.height) {
       addText(
-        `Razmery: ${geometry.width} x ${geometry.height} mm`,
+        `Razmery: ${geometry.width} x ${geometry.height} m`,
         leftMargin + 5,
         yPosition
       );
@@ -262,12 +277,41 @@ const ResultPage = () => {
     doc.setFont("helvetica", "normal");
     if (extraWorks.selectedWorks.length > 0) {
       extraWorks.selectedWorks.forEach((work) => {
-        addText(`• ${convertToLatin(work)}`, leftMargin + 5, yPosition);
+        addText(
+          `• ${convertToLatin(work)} - 1000 rub.`,
+          leftMargin + 5,
+          yPosition
+        );
         yPosition += lineHeight;
       });
+      yPosition += lineHeight;
+      doc.setFont("helvetica", "bold");
+      addText(
+        `Itogo dopolnitelnyh rabot: ${getExtraWorksPrice()} rub.`,
+        leftMargin + 5,
+        yPosition
+      );
+      yPosition += lineHeight * 2;
+
+      // Общая стоимость
+      doc.setFontSize(14);
+      addText(
+        `OBSHAYA STOIMOST: ${getTotalPrice().toFixed(2)} rub.`,
+        leftMargin,
+        yPosition
+      );
     } else {
       addText("Ne vybrany", leftMargin + 5, yPosition);
-      yPosition += lineHeight;
+      yPosition += lineHeight * 2;
+
+      // Общая стоимость (без доп работ)
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      addText(
+        `OBSHAYA STOIMOST: ${getTotalPrice().toFixed(2)} rub.`,
+        leftMargin,
+        yPosition
+      );
     }
 
     // Сохранение PDF
@@ -375,15 +419,14 @@ const ResultPage = () => {
     const tableData: string[][] = [];
 
     // Геометрия
-    if (geometry.selectedShapes.length > 0) {
-      tableData.push([
-        "Geometry",
-        "Shape",
-        convertToLatin(geometry.selectedShapes.join(", ")),
-      ]);
+    if (geometry.selectedShape) {
+      const shapeLabel =
+        shapes.find((s) => s.value === geometry.selectedShape)?.label ||
+        geometry.selectedShape;
+      tableData.push(["Geometry", "Shape", convertToLatin(shapeLabel)]);
     }
     if (geometry.width && geometry.height) {
-      tableData.push(["", "Size", `${geometry.width} x ${geometry.height} mm`]);
+      tableData.push(["", "Size", `${geometry.width} x ${geometry.height} m`]);
     }
 
     // Материал
@@ -426,11 +469,23 @@ const ResultPage = () => {
       extraWorks.selectedWorks.forEach((work, index) => {
         tableData.push([
           index === 0 ? "Extra Works" : "",
-          "",
           convertToLatin(work),
+          "1000 rub.",
         ]);
       });
+      tableData.push([
+        "",
+        "Total Extra Works:",
+        `${getExtraWorksPrice()} rub.`,
+      ]);
     }
+
+    // Общая стоимость
+    tableData.push([
+      "TOTAL",
+      "FINAL PRICE:",
+      `${getTotalPrice().toFixed(2)} rub.`,
+    ]);
 
     // Создание таблицы
     autoTable(doc, {
@@ -483,12 +538,42 @@ const ResultPage = () => {
               Геометрия
             </Text>
             <Divider my="xs" />
-            {geometry.selectedShapes.length > 0 && (
-              <Text size="sm">Форма: {geometry.selectedShapes.join(", ")}</Text>
+            {geometry.selectedShape && (
+              <>
+                <Text size="sm">
+                  Форма:{" "}
+                  {shapes.find((s) => s.value === geometry.selectedShape)
+                    ?.label || geometry.selectedShape}
+                </Text>
+                {(() => {
+                  const selectedShapeData = shapes.find(
+                    (s) => s.value === geometry.selectedShape
+                  );
+                  const area = getArea();
+                  const shapePrice = getShapePrice();
+                  const totalShapePrice = getTotalShapePrice();
+
+                  return (
+                    <>
+                      {selectedShapeData && (
+                        <Text size="sm">Цена за м²: {shapePrice} ₽</Text>
+                      )}
+                      {area > 0 && (
+                        <>
+                          <Text size="sm">Площадь: {area.toFixed(3)} м²</Text>
+                          <Text size="sm" fw={600} c="blue">
+                            Стоимость по форме: {totalShapePrice.toFixed(2)} ₽
+                          </Text>
+                        </>
+                      )}
+                    </>
+                  );
+                })()}
+              </>
             )}
             {geometry.width && geometry.height && (
               <Text size="sm">
-                Размеры: {geometry.width} x {geometry.height} мм
+                Размеры: {geometry.width} x {geometry.height} м
               </Text>
             )}
           </Box>
@@ -554,18 +639,50 @@ const ResultPage = () => {
             </Text>
             <Divider my="xs" />
             {extraWorks.selectedWorks.length > 0 ? (
-              <Stack gap="xs">
-                {extraWorks.selectedWorks.map((work, index) => (
-                  <Text key={index} size="sm">
-                    • {work}
+              <>
+                <Stack gap="xs">
+                  {extraWorks.selectedWorks.map((work, index) => (
+                    <Group key={index} justify="space-between">
+                      <Text size="sm">• {work}</Text>
+                      <Text size="sm" c="dimmed">
+                        1000 ₽
+                      </Text>
+                    </Group>
+                  ))}
+                </Stack>
+                <Divider my="xs" />
+                <Group justify="space-between">
+                  <Text size="sm" fw={600}>
+                    Итого дополнительных работ:
                   </Text>
-                ))}
-              </Stack>
+                  <Text size="sm" fw={600} c="blue">
+                    {getExtraWorksPrice()} ₽
+                  </Text>
+                </Group>
+              </>
             ) : (
               <Text size="sm" c="dimmed">
                 Не выбраны
               </Text>
             )}
+          </Box>
+
+          {/* Общая стоимость */}
+          <Box
+            style={{
+              backgroundColor: "#f8f9fa",
+              padding: "16px",
+              borderRadius: "8px",
+            }}
+          >
+            <Group justify="space-between" align="center">
+              <Text fw={700} size="lg">
+                ОБЩАЯ СТОИМОСТЬ:
+              </Text>
+              <Text fw={700} size="xl" c="green">
+                {getTotalPrice().toFixed(2)} ₽
+              </Text>
+            </Group>
           </Box>
         </Stack>
       </Card>
