@@ -20,17 +20,27 @@ const WashesPage = () => {
     <Stack>
       <Stack>
         <Title order={3}>Выберите вариант мойки</Title>
-        <SimpleGrid cols={5} spacing="md">
+        <SimpleGrid cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5 }} spacing="md">
           {washes.slice(0, 5).map((w) => (
             <Card
               key={w.id}
               withBorder
-              shadow={selectedWash?.id === w.id ? "md" : "sm"}
+              shadow={selectedWash?.id === w.id ? "lg" : "sm"}
               radius="md"
-              bg={selectedWash?.id === w.id ? "white" : "gray.1"}
               padding="sm"
               onClick={() => selectWash(w)}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                border:
+                  selectedWash?.id === w.id
+                    ? "3px solid #9775FA"
+                    : "1px solid #dee2e6",
+                backgroundColor:
+                  selectedWash?.id === w.id ? "#F3F0FF" : "#f8f9fa",
+                // transform:
+                //   selectedWash?.id === w.id ? "scale(1.05)" : "scale(1)",
+                transition: "all 0.2s ease-in-out",
+              }}
             >
               <Stack align="center" gap="xs">
                 <Image
@@ -55,20 +65,31 @@ const WashesPage = () => {
       <div style={{ height: 20 }} />
 
       <Stack>
-        <SimpleGrid cols={5} spacing="md">
+        <SimpleGrid cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5 }} spacing="md">
           {washes.slice(5).map((w) => {
             const disabled = !allowSecondGroup;
             return (
               <Card
                 key={w.id}
                 withBorder
-                shadow={selectedWash?.id === w.id ? "md" : "sm"}
+                shadow={selectedWash?.id === w.id ? "lg" : "sm"}
                 radius="md"
                 padding="sm"
                 onClick={() => !disabled && selectWash(w)}
                 style={{
                   cursor: disabled ? "not-allowed" : "pointer",
                   opacity: disabled ? 0.4 : 1,
+                  border:
+                    selectedWash?.id === w.id
+                      ? "3px solid #9775FA"
+                      : "1px solid #dee2e6",
+                  backgroundColor:
+                    selectedWash?.id === w.id ? "#F3F0FF" : "#f8f9fa",
+                  transform:
+                    selectedWash?.id === w.id && !disabled
+                      ? "scale(1.05)"
+                      : "scale(1)",
+                  transition: "all 0.2s ease-in-out",
                 }}
               >
                 <Stack align="center" gap="xs">

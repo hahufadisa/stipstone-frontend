@@ -99,76 +99,113 @@ const MaterialPage = () => {
   );
 
   return (
-    <Grid align="stretch" gutter="lg">
-      <Grid.Col span={2}>
-        <Radio.Group value={brand} onChange={setBrand}>
-          <Stack gap="md">
-            {brands.map((b) => (
-              <Radio.Card key={b.value} value={b.value} withBorder radius="md">
-                <Stack align="center" gap={4}>
-                  <Image
-                    src={b.image}
-                    alt={b.label}
-                    height={50}
-                    fit="contain"
-                  />
-                </Stack>
-              </Radio.Card>
-            ))}
-          </Stack>
-        </Radio.Group>
-      </Grid.Col>
-
-      <Grid.Col span={10}>
-        <Stack gap="md">
-          <Group grow>
-            <Select
-              label="Фактура"
-              data={fakturaOptions}
-              value={faktura}
-              onChange={(val) => setFaktura(val || "any")}
-            />
-            <Select
-              label="Цвет"
-              data={colorOptions}
-              value={color}
-              onChange={(val) => setColor(val || "any")}
-            />
-          </Group>
-
-          <div style={{ maxHeight: 700, overflowY: "auto" }}>
-            <SimpleGrid cols={5} spacing="md">
-              {filtered.map((mat) => (
-                <Card
-                  key={mat.id}
+    <div style={{ paddingBottom: "2rem" }}>
+      <Grid align="stretch" gutter="lg">
+        <Grid.Col span={{ base: 12, sm: 4, md: 3, lg: 2 }}>
+          <Radio.Group value={brand} onChange={setBrand}>
+            <Stack gap="md">
+              {brands.map((b) => (
+                <Radio.Card
+                  key={b.value}
+                  value={b.value}
                   withBorder
-                  shadow={selectedMaterial?.id === mat.id ? "md" : "sm"}
                   radius="md"
-                  padding="sm"
-                  onClick={() => selectMaterial(mat)}
-                  style={{ cursor: "pointer" }}
+                  p="md"
+                  style={{
+                    border:
+                      brand === b.value
+                        ? "3px solid #339AF0"
+                        : "1px solid #dee2e6",
+                    backgroundColor: brand === b.value ? "#E3F2FD" : "white",
+                    transition: "all 0.2s ease-in-out",
+                    minHeight: "100px",
+                  }}
                 >
                   <Stack align="center" gap="xs">
                     <Image
-                      src={mat.image}
-                      alt={mat.name}
-                      height={80}
+                      src={b.image}
+                      alt={b.label}
+                      height={60}
                       fit="contain"
+                      radius="sm"
                     />
-                    <Text fw={500} size="sm">
-                      {mat.name}
-                    </Text>
-                    <Text size="xs" c="dimmed">
-                      {mat.price} ₽
+                    <Text size="sm" fw={500} ta="center">
+                      {b.label}
                     </Text>
                   </Stack>
-                </Card>
+                </Radio.Card>
               ))}
-            </SimpleGrid>
-          </div>
-        </Stack>
-      </Grid.Col>
-    </Grid>
+            </Stack>
+          </Radio.Group>
+        </Grid.Col>
+
+        <Grid.Col span={{ base: 12, sm: 8, md: 9, lg: 10 }}>
+          <Stack gap="md">
+            <Group grow>
+              <Select
+                label="Фактура"
+                data={fakturaOptions}
+                value={faktura}
+                onChange={(val) => setFaktura(val || "any")}
+              />
+              <Select
+                label="Цвет"
+                data={colorOptions}
+                value={color}
+                onChange={(val) => setColor(val || "any")}
+              />
+            </Group>
+
+            <div style={{ maxHeight: 700, overflowY: "auto" }}>
+              <SimpleGrid
+                cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5 }}
+                spacing="md"
+              >
+                {filtered.map((mat) => (
+                  <Card
+                    key={mat.id}
+                    withBorder
+                    shadow={selectedMaterial?.id === mat.id ? "lg" : "sm"}
+                    radius="md"
+                    padding="sm"
+                    onClick={() => selectMaterial(mat)}
+                    style={{
+                      cursor: "pointer",
+                      border:
+                        selectedMaterial?.id === mat.id
+                          ? "3px solid #339AF0"
+                          : "1px solid #dee2e6",
+                      backgroundColor:
+                        selectedMaterial?.id === mat.id ? "#E3F2FD" : "white",
+                      // transform:
+                      //   selectedMaterial?.id === mat.id
+                      //     ? "scale(1.05)"
+                      //     : "scale(1)",
+                      transition: "all 0.2s ease-in-out",
+                    }}
+                  >
+                    <Stack align="center" gap="xs">
+                      <Image
+                        src={mat.image}
+                        alt={mat.name}
+                        height={80}
+                        fit="contain"
+                      />
+                      <Text fw={500} size="sm">
+                        {mat.name}
+                      </Text>
+                      <Text size="xs" c="dimmed">
+                        {mat.price} ₽
+                      </Text>
+                    </Stack>
+                  </Card>
+                ))}
+              </SimpleGrid>
+            </div>
+          </Stack>
+        </Grid.Col>
+      </Grid>
+    </div>
   );
 };
 

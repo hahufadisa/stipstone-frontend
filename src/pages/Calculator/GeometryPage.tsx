@@ -96,11 +96,19 @@ const GeometryPage = () => {
   };
 
   return (
-    <Tabs.Panel value="size" pt="md">
-      <Grid align="stretch">
-        <Grid.Col span={2}>
+    <Tabs.Panel value="size" pt="md" px={{ base: "xs", sm: "md" }}>
+      <Grid align="stretch" gutter="md">
+        <Grid.Col span={{ base: 12, sm: 4, md: 3, lg: 2 }}>
           <Radio.Group value={selectedShape || ""} onChange={handleShapeSelect}>
-            <Stack align="stretch" gap="md">
+            <Stack
+              align="stretch"
+              gap="md"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+                gap: "16px",
+              }}
+            >
               {shapes.map((shape) => (
                 <Radio.Card
                   key={shape.value}
@@ -108,7 +116,26 @@ const GeometryPage = () => {
                   radius="md"
                   p="md"
                   withBorder
-                  style={{ width: 120 }}
+                  style={{
+                    width: "100%",
+                    minWidth: 120,
+                    maxWidth: 160,
+                    border:
+                      selectedShape === shape.value
+                        ? "3px solid #E03131"
+                        : "1px solid #dee2e6",
+                    backgroundColor:
+                      selectedShape === shape.value ? "#FFE8E8" : "white",
+                    transform:
+                      selectedShape === shape.value
+                        ? "scale(1.05)"
+                        : "scale(1)",
+                    transition: "all 0.2s ease-in-out",
+                    boxShadow:
+                      selectedShape === shape.value
+                        ? "0 4px 12px rgba(224, 49, 49, 0.3)"
+                        : "0 1px 3px rgba(0, 0, 0, 0.1)",
+                  }}
                 >
                   <Stack align="center" gap="xs">
                     <Image
@@ -119,11 +146,11 @@ const GeometryPage = () => {
                       radius="sm"
                       loading="lazy"
                     />
-                    <Text size="sm" fw={500}>
+                    <Text size="sm" fw={500} ta="center">
                       {shape.label}
                     </Text>
                     {shape.price && (
-                      <Text size="xs" c="dimmed">
+                      <Text size="xs" c="dimmed" ta="center">
                         {shape.price} ₽/м²
                       </Text>
                     )}
@@ -134,8 +161,15 @@ const GeometryPage = () => {
           </Radio.Group>
         </Grid.Col>
 
-        <Grid.Col span={9}>
-          <Center style={{ minHeight: 220, position: "relative" }}>
+        <Grid.Col span={{ base: 12, sm: 8, md: 9, lg: 10 }}>
+          <Center
+            style={{
+              minHeight: 220,
+              position: "relative",
+              padding: "16px",
+              overflow: "auto",
+            }}
+          >
             {selectedShape ? (
               <>
                 <Image
@@ -160,7 +194,8 @@ const GeometryPage = () => {
                         top: "11%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -176,7 +211,8 @@ const GeometryPage = () => {
                         top: "60%",
                         left: "5%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
                   </>
@@ -196,7 +232,8 @@ const GeometryPage = () => {
                         top: "8%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -212,7 +249,8 @@ const GeometryPage = () => {
                         top: "50%",
                         left: "5%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -228,7 +266,8 @@ const GeometryPage = () => {
                         top: "93%",
                         left: "28%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -244,7 +283,8 @@ const GeometryPage = () => {
                         top: "36%",
                         left: "95%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
                   </>
@@ -264,7 +304,8 @@ const GeometryPage = () => {
                         top: "6%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -280,7 +321,8 @@ const GeometryPage = () => {
                         top: "40%",
                         left: "5%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -296,7 +338,8 @@ const GeometryPage = () => {
                         top: "93%",
                         left: "25%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -312,7 +355,8 @@ const GeometryPage = () => {
                         top: "93%",
                         left: "75%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -328,7 +372,8 @@ const GeometryPage = () => {
                         top: "40%",
                         left: "95%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -344,7 +389,8 @@ const GeometryPage = () => {
                         top: "36%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
                   </>
@@ -364,7 +410,8 @@ const GeometryPage = () => {
                         top: "6%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
 
@@ -380,7 +427,8 @@ const GeometryPage = () => {
                         top: "74%",
                         left: "9%",
                         transform: "translate(-50%, -50%)",
-                        width: 80,
+                        width: "min(80px, 20vw)",
+                        minWidth: "60px",
                       }}
                     />
                   </>

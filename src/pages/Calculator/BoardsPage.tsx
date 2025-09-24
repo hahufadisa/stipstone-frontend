@@ -19,16 +19,27 @@ const BoardsPage = () => {
     <Stack>
       <Stack>
         <Title order={3}>Выберите кромку</Title>
-        <SimpleGrid cols={5} spacing="md">
+        <SimpleGrid cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5 }} spacing="md">
           {kromki.map((k) => (
             <Card
               key={k.id}
               withBorder
-              shadow={selectedKromka?.id === k.id ? "md" : "sm"}
+              shadow={selectedKromka?.id === k.id ? "lg" : "sm"}
               radius="md"
               padding="sm"
               onClick={() => selectKromka(k)}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                border:
+                  selectedKromka?.id === k.id
+                    ? "3px solid #40C057"
+                    : "1px solid #dee2e6",
+                backgroundColor:
+                  selectedKromka?.id === k.id ? "#E8F5E8" : "white",
+                // transform:
+                //   selectedKromka?.id === k.id ? "scale(1.05)" : "scale(1)",
+                transition: "all 0.2s ease-in-out",
+              }}
             >
               <Stack align="center" gap="xs">
                 <Image src={k.image} alt={k.name} height={80} fit="contain" />
@@ -46,16 +57,27 @@ const BoardsPage = () => {
 
       <Stack>
         <Title order={3}>Выберите бортик</Title>
-        <SimpleGrid cols={5} spacing="md">
+        <SimpleGrid cols={{ base: 1, xs: 2, sm: 3, md: 4, lg: 5 }} spacing="md">
           {boards.map((b) => (
             <Card
               key={b.id}
               withBorder
-              shadow={selectedBoard?.id === b.id ? "md" : "sm"}
+              shadow={selectedBoard?.id === b.id ? "lg" : "sm"}
               radius="md"
               padding="sm"
               onClick={() => selectBoard(b)}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                border:
+                  selectedBoard?.id === b.id
+                    ? "3px solid #FD7E14"
+                    : "1px solid #dee2e6",
+                backgroundColor:
+                  selectedBoard?.id === b.id ? "#FFF4E6" : "white",
+                transform:
+                  selectedBoard?.id === b.id ? "scale(1.05)" : "scale(1)",
+                transition: "all 0.2s ease-in-out",
+              }}
             >
               <Stack align="center" gap="xs">
                 <Image src={b.image} alt={b.name} height={80} fit="contain" />

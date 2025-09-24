@@ -15,8 +15,11 @@ const CalcPage = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Container size="xl">
-        <Box className="calc-page">
+      <Container size="xl" px={{ base: "sm", sm: "md", lg: "xl" }}>
+        <Box
+          className="calc-page"
+          style={{ width: "100%", overflow: "hidden" }}
+        >
           <Title order={2} mb="lg" ta="center">
             Калькулятор
           </Title>
@@ -24,10 +27,18 @@ const CalcPage = () => {
           <Tabs
             defaultValue="size"
             variant="pills"
-            radius="md"
+            radius="xs"
             keepMounted={false}
+            style={{ width: "100%" }}
           >
-            <Tabs.List grow>
+            <Tabs.List
+              grow
+              style={{
+                flexWrap: "wrap",
+                gap: "4px",
+                justifyContent: "center",
+              }}
+            >
               <Tabs.Tab value="size">Размер</Tabs.Tab>
               <Tabs.Tab value="material">Материал</Tabs.Tab>
               <Tabs.Tab value="edge">Кромка и бортик</Tabs.Tab>
@@ -38,23 +49,23 @@ const CalcPage = () => {
 
             <GeometryPage />
 
-            <Tabs.Panel value="material" pt="md">
+            <Tabs.Panel value="material" pt="md" px={{ base: "xs", sm: "md" }}>
               <MaterialPage />
             </Tabs.Panel>
 
-            <Tabs.Panel value="edge" pt="md">
+            <Tabs.Panel value="edge" pt="md" px={{ base: "xs", sm: "md" }}>
               <BoardsPage />
             </Tabs.Panel>
 
-            <Tabs.Panel value="sink" pt="md">
+            <Tabs.Panel value="sink" pt="md" px={{ base: "xs", sm: "md" }}>
               <WashesPage />
             </Tabs.Panel>
 
-            <Tabs.Panel value="extra" pt="md">
+            <Tabs.Panel value="extra" pt="md" px={{ base: "xs", sm: "md" }}>
               <ExtraWorksPage />
             </Tabs.Panel>
 
-            <Tabs.Panel value="result" pt="md">
+            <Tabs.Panel value="result" pt="md" px={{ base: "xs", sm: "md" }}>
               <ResultPage />
             </Tabs.Panel>
           </Tabs>
