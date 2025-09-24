@@ -23,27 +23,27 @@ const brands = [
   {
     value: "grandex",
     label: "Grandex",
-    image: "../../public/CalcImages/Brands/grandex.jpg",
+    image: "../../CalcImages/Brands/grandex.jpg",
   },
   {
     value: "staron",
     label: "Staron",
-    image: "../../public/CalcImages/Brands/staron.jpg",
+    image: "../../CalcImages/Brands/staron.jpg",
   },
   {
     value: "himacs",
     label: "Himacs",
-    image: "../../public/CalcImages/Brands/himacs.jpg",
+    image: "../../CalcImages/Brands/himacs.jpg",
   },
   {
     value: "hanex",
     label: "Hyundai",
-    image: "../../public/CalcImages/Brands/hanex.jpg",
+    image: "../../CalcImages/Brands/hanex.jpg",
   },
   {
     value: "akrilika",
     label: "Akrilka",
-    image: "../../public/CalcImages/Brands/akrilika.png",
+    image: "../../CalcImages/Brands/akrilika.png",
   },
 ];
 
