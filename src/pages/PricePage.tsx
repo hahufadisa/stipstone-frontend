@@ -67,9 +67,7 @@ const PricePage: React.FC = () => {
             <PriceTable type="services" />
           </Box>
 
-          <Box className="advantages-section" mb="xl">
-            <AdvantagesSection />
-          </Box>
+          <AdvantagesSection />
 
           <Box className="contact-form-section">
             <Grid gutter="xl">
