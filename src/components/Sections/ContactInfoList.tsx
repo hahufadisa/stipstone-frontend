@@ -36,11 +36,11 @@ const ContactInfoList: React.FC = () => {
           {textContent.contact.contactInfo.title}
         </Text>
 
-        <Grid className="contact-grid">
+        <Grid className="contact-grid" gutter={"none"}>
           {contactItems.map((item, index) => (
             <Flex key={index}>
               <Box className="contact-item">
-                <Group gap="md" align="flex-start">
+                <Group align="flex-start">
                   <Box className="contact-icon">{item.icon}</Box>
                   <Stack gap="xs" style={{ flex: 1 }}>
                     <Text fw={600} size="sm">

@@ -214,7 +214,6 @@
 
   @media (max-width: 768px) {
     height: auto;
-    padding: 2rem;
     border-top: none;
     justify-content: space-between;
   }
@@ -253,6 +252,7 @@
 
 .contact-grid {
   max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .contact-icon {

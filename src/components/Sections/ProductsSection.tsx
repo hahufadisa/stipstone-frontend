@@ -63,7 +63,7 @@ const ProductsSection: React.FC = () => {
               <ProductFeatures />
             </Grid.Col>
 
-            <Grid.Col span={{ base: 12, md: 6 }}>
+            <Grid.Col span={{ base: 12, md: 6 }} p={0}>
               <ProductGallery />
             </Grid.Col>
           </Grid>

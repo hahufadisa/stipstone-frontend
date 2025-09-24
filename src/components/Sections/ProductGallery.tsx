@@ -13,12 +13,13 @@ const ProductGallery = () => {
       viewport={{ once: true }}
     >
       <Box className="products-gallery">
-        <Container size="xl" mt={useMatches({ base: "md", sm: "xl" })}>
+        <Container size="xl" mt={useMatches({ base: "md", sm: "xl" })} p={"md"}>
           <Carousel
             withIndicators
             height={400}
             slideSize={slideSize}
             slideGap="md"
+            p={0}
           >
             {textContent.products.gallery.map((item) => (
               <Carousel.Slide key={item.id}>
