@@ -64,7 +64,7 @@ const ContactInfo: React.FC = () => {
               <Group gap="md">
                 <Button
                   component="a"
-                  href="https://wa.me/79998887766"
+                  href="https://wa.me/79850867021"
                   target="_blank"
                   color="green"
                   leftSection={<IconBrandWhatsapp size={20} />}
@@ -74,7 +74,7 @@ const ContactInfo: React.FC = () => {
 
                 <Button
                   component="a"
-                  href="https://t.me/yourusername"
+                  href="https://t.me/Stipstone"
                   target="_blank"
                   color="blue"
                   leftSection={<IconBrandTelegram size={20} />}

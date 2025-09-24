@@ -6,8 +6,8 @@ export const getOrganizationStructuredData = () => ({
   description:
     "Изделия из камня в Зеленограде. Столешницы, подоконники, мойки из искусственного камня. Замер, изготовление и установка.",
   url: "https://stipstone-zelenograd.ru",
-  telephone: "+7 (904) 355-47-89",
-  email: "sse.1972@mail.ru",
+  telephone: "+7 (985) 086-70-21",
+  email: "stipstone7@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Георгиевский проспект 33а",
@@ -86,7 +86,7 @@ export const getServiceStructuredData = () => ({
       addressRegion: "Москва",
       addressCountry: "RU",
     },
-    telephone: "+7 (904) 355-47-89",
+    telephone: "+7 (985) 086-70-21",
   },
   areaServed: {
     "@type": "City",
@@ -225,7 +225,7 @@ export const getFAQStructuredData = () => ({
       name: "Как заказать изделие из камня в Зеленограде?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Для заказа изделия из камня в Зеленограде позвоните по телефону +7 (904) 355-47-89 или оставьте заявку на сайте. Мы приедем на замер и предоставим точный расчет.",
+        text: "Для заказа изделия из камня в Зеленограде позвоните по телефону +7 (985) 086-70-21 или оставьте заявку на сайте. Мы приедем на замер и предоставим точный расчет.",
       },
     },
   ],

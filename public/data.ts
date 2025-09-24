@@ -10,8 +10,8 @@ import type {
 export const companyInfo: CompanyInfo = {
   name: "StipStone",
   logo: "S",
-  phone: "+7 (904) 355-47-89",
-  email: "sse.1972@mail.ru",
+  phone: "+7 (985) 086-70-21",
+  email: "stipstone7@gmail.com",
   address: "г.Москва, г.Зеленоград, Георгиевский проспект 33а",
   workingHours: {},
 };
@@ -297,7 +297,7 @@ export const contactDetails = {
     items: [
       {
         department: "Консультация и расчёт:",
-        phone: "+7 (904) 355-47-89",
+        phone: "+7 (985) 086-70-21",
         hours: "пн-пт: с 9:00 до 18:00",
       },
     ],
@@ -306,7 +306,7 @@ export const contactDetails = {
     title: "Электронная почта",
     icon: "✉️",
     details:
-      "Для расчёта стоимости проектов и по вопросам сотрудничества: sse.1972@mail.ru",
+      "Для расчёта стоимости проектов и по вопросам сотрудничества: stipstone7@gmail.com",
   },
   social: {
     title: "Сообщество ВКонтакте",
