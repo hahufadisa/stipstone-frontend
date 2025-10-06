@@ -61,12 +61,12 @@ RewriteEngine On
 RewriteBase /
 
 # Редиректы для SEO страниц
-RewriteRule ^столешницы-зеленоград/?$ /catalog/stoleshnitsy [R=301,L]
-RewriteRule ^подоконники-зеленоград/?$ /catalog/podokonniki [R=301,L] 
-RewriteRule ^мойки-зеленоград/?$ /catalog/moyki [R=301,L]
-RewriteRule ^барные-стойки-зеленоград/?$ /catalog/barnye-stoyki [R=301,L]
-RewriteRule ^акриловый-камень-зеленоград/?$ /catalog/akrilovyy-kamen [R=301,L]
-RewriteRule ^кварцевый-камень-зеленоград/?$ /catalog/kvartsevyy-kamen [R=301,L]
+RewriteRule ^столешницы-Зеленоград/?$ /catalog/stoleshnitsy [R=301,L]
+RewriteRule ^подоконники-Зеленоград/?$ /catalog/podokonniki [R=301,L] 
+RewriteRule ^мойки-Зеленоград/?$ /catalog/moyki [R=301,L]
+RewriteRule ^барные-стойки-Зеленоград/?$ /catalog/barnye-stoyki [R=301,L]
+RewriteRule ^акриловый-камень-Зеленоград/?$ /catalog/akrilovyy-kamen [R=301,L]
+RewriteRule ^кварцевый-камень-Зеленоград/?$ /catalog/kvartsevyy-kamen [R=301,L]
 
 # Обработка 404 ошибок
 ErrorDocument 404 /404.html
