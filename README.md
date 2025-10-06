@@ -19,7 +19,7 @@ This repository contains the frontend codebase for the Stipstone application.
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-org/stipstone-frontend.git
+    git clone https://github.com/hahufadisa/stipstone-frontend.git
     cd stipstone-frontend
     ```
 
