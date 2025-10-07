@@ -119,7 +119,7 @@ export const navigationItems: NavigationItem[] = [
   { id: "main", label: "ГЛАВНАЯ", href: "/" },
   { id: "catalog", label: "КАТАЛОГ", href: "/catalog" },
   { id: "prices", label: "ЦЕНЫ", href: "/prices" },
-  { id: "calc", label: "КАЛЬКУЛЯТОР", href: "/calc" },
+  // { id: "calc", label: "КАЛЬКУЛЯТОР", href: "/calc" },
   { id: "portfolio", label: "НАШИ РАБОТЫ", href: "/portfolio" },
   { id: "contacts", label: "КОНТАКТЫ", href: "/contacts" },
 ];
