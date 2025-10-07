@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Container, Group, Box, rgba } from "@mantine/core";
+import { Container, Group, Box } from "@mantine/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { services } from "../../../public/data";
