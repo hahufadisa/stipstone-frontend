@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { Service } from "../../../public";
 import { textContent, companyInfo } from "../../../public/data";
 import { Link } from "react-router-dom";
+import Logo from "../../../public/mainLogo.png";
 
 interface HeroContentProps {
   service: Service;
@@ -23,6 +24,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ service, index }) => {
         padding: "0 1rem",
       }}
     >
+      <img src="/mainLogoBlack.svg" alt="logo" width={700} />
       <Stack>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
