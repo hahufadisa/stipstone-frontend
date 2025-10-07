@@ -33,6 +33,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ service, index }) => {
           <Text
             size={useMatches({ base: "1.5rem", sm: "2rem", md: "3rem" })}
             fw={800}
+            c="white"
             className="hero-title"
           >
             {service.title}
@@ -45,6 +46,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ service, index }) => {
           transition={{ duration: 0.6, delay: 0.5 + index * 0.2 }}
         >
           <Text
+            c="white"
             size={useMatches({ base: "md", sm: "lg", md: "1.5rem" })}
             className="hero-description"
             style={{ lineHeight: 1.4 }}

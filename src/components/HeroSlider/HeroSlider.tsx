@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Container, Group, Box, Image } from "@mantine/core";
+import { Container, Group, Box, rgba } from "@mantine/core";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { services } from "../../../public/data";
@@ -15,22 +15,14 @@ const HeroSlider = memo(() => {
           position: "absolute",
           top: 0,
           left: 0,
+          rotate: "180deg",
           width: "100%",
           height: "100%",
+          background:
+            "linear-gradient(90deg,rgba(66, 66, 66, 1) 0%, rgba(97, 97, 97, 1) 50%, rgba(255, 255, 255, 1) 100%)",
           zIndex: 0,
         }}
-      >
-        <Image
-          src="/bg.jpg"
-          alt="Hero Background"
-          loading="lazy"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
-        />
-      </Box>
+      ></Box>
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={0}
