@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import type { Service } from "../../../public";
 import { textContent, companyInfo } from "../../../public/data";
 import { Link } from "react-router-dom";
-import Logo from "../../../public/mainLogo.png";
 
 interface HeroContentProps {
   service: Service;
