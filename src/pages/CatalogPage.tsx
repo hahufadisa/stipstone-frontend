@@ -21,10 +21,10 @@ import {
 const CatalogPage = () => {
   const productData = getProductStructuredData("столешницы");
   const breadcrumbData = getBreadcrumbStructuredData([
-    { name: "Главная", url: "https://stipstone-zelenograd.ru/" },
+    { name: "Главная", url: "https://stipstone.ru/" },
     {
       name: "Каталог изделий из камня",
-      url: "https://stipstone-zelenograd.ru/catalog",
+      url: "https://stipstone.ru/catalog",
     },
   ]);
 
@@ -37,8 +37,8 @@ const CatalogPage = () => {
         ogTitle="Каталог изделий из камня в Зеленограде - StipStone"
         ogDescription="Полный каталог изделий из камня в Зеленограде: столешницы, подоконники, мойки, барные стойки из акрилового и кварцевого камня."
         ogImage="/table2.jpg"
-        ogUrl="https://stipstone-zelenograd.ru/catalog"
-        canonical="https://stipstone-zelenograd.ru/catalog"
+        ogUrl="https://stipstone.ru/catalog"
+        canonical="https://stipstone.ru/catalog"
         structuredData={[productData, breadcrumbData]}
       />
 

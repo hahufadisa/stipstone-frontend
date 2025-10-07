@@ -5,7 +5,7 @@ export const getOrganizationStructuredData = () => ({
   name: "StipStone",
   description:
     "Изделия из камня в Зеленограде. Столешницы, подоконники, мойки из искусственного камня. Замер, изготовление и установка.",
-  url: "https://stipstone-zelenograd.ru",
+  url: "https://stipstone.ru",
   telephone: "+7 (985) 086-70-21",
   email: "stipstone7@gmail.com",
   address: {

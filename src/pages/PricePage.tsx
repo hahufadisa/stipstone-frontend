@@ -8,10 +8,10 @@ import { getBreadcrumbStructuredData } from "../components/SEO/StructuredData";
 
 const PricePage: React.FC = () => {
   const breadcrumbData = getBreadcrumbStructuredData([
-    { name: "Главная", url: "https://stipstone-zelenograd.ru/" },
+    { name: "Главная", url: "https://stipstone.ru/" },
     {
       name: "Цены на изделия из камня",
-      url: "https://stipstone-zelenograd.ru/prices",
+      url: "https://stipstone.ru/prices",
     },
   ]);
 
@@ -24,8 +24,8 @@ const PricePage: React.FC = () => {
         ogTitle="Цены на изделия из камня в Зеленограде - StipStone"
         ogDescription="Актуальные цены на изделия из камня в Зеленограде: столешницы, подоконники, мойки из искусственного камня. Прозрачное ценообразование."
         ogImage="/kitchen3.jpg"
-        ogUrl="https://stipstone-zelenograd.ru/prices"
-        canonical="https://stipstone-zelenograd.ru/prices"
+        ogUrl="https://stipstone.ru/prices"
+        canonical="https://stipstone.ru/prices"
         structuredData={breadcrumbData}
       />
 

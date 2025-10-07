@@ -6,8 +6,8 @@ import { getBreadcrumbStructuredData } from "../components/SEO/StructuredData";
 
 const ContactPage = () => {
   const breadcrumbData = getBreadcrumbStructuredData([
-    { name: "Главная", url: "https://stipstone-zelenograd.ru/" },
-    { name: "Контакты", url: "https://stipstone-zelenograd.ru/contacts" },
+    { name: "Главная", url: "https://stipstone.ru/" },
+    { name: "Контакты", url: "https://stipstone.ru/contacts" },
   ]);
 
   return (
@@ -19,8 +19,8 @@ const ContactPage = () => {
         ogTitle="Контакты StipStone в Зеленограде - изделия из камня"
         ogDescription="Контакты StipStone в Зеленограде. Заказать изделия из камня: столешницы, подоконники, мойки. Бесплатная консультация и замер."
         ogImage="/kitchen6.jpg"
-        ogUrl="https://stipstone-zelenograd.ru/contacts"
-        canonical="https://stipstone-zelenograd.ru/contacts"
+        ogUrl="https://stipstone.ru/contacts"
+        canonical="https://stipstone.ru/contacts"
         structuredData={breadcrumbData}
       />
 

@@ -21,7 +21,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   ogTitle,
   ogDescription,
   ogImage = "/kitchen.jpg",
-  ogUrl = "https://stipstone-zelenograd.ru",
+  ogUrl = "https://stipstone.ru",
   canonical,
   noindex = false,
   structuredData,

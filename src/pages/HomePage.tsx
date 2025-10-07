@@ -21,8 +21,8 @@ const HomePage = () => {
         ogTitle="StipStone - изделия из камня в Зеленограде"
         ogDescription="Изделия из камня в Зеленограде от StipStone. Столешницы, подоконники, мойки из искусственного камня. Замер, изготовление и установка."
         ogImage="/kitchen.jpg"
-        ogUrl="https://stipstone-zelenograd.ru/"
-        canonical="https://stipstone-zelenograd.ru/"
+        ogUrl="https://stipstone.ru/"
+        canonical="https://stipstone.ru/"
         structuredData={structuredData}
       />
 

@@ -13,8 +13,8 @@ const PortfolioPage = () => {
         ogTitle="Портфолио работ StipStone"
         ogDescription="Наши готовые работы из акрилового и кварцевого камня в Зеленограде."
         ogImage="/portfolio/work1.jpg"
-        ogUrl="https://stipstone-zelenograd.ru/portfolio"
-        canonical="https://stipstone-zelenograd.ru/portfolio"
+        ogUrl="https://stipstone.ru/portfolio"
+        canonical="https://stipstone.ru/portfolio"
       />
 
       <Box className="portfolio-page">

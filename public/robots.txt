@@ -1,5 +1,5 @@
 # Robots.txt для StipStone - изделия из камня в Зеленограде
-# https://stipstone-zelenograd.ru
+# https://stipstone.ru
 
 User-agent: *
 Allow: /
@@ -47,7 +47,7 @@ Disallow: /dist/
 Crawl-delay: 1
 
 # Ссылка на карту сайта
-Sitemap: https://stipstone-zelenograd.ru/public/sitemap.xml
+Sitemap: https://stipstone.ru/public/sitemap.xml
 
 # Специальные инструкции для разных поисковых роботов
 
