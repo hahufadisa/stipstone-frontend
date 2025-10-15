@@ -1,72 +1,146 @@
 import { memo } from "react";
-import { Container, Group, Box } from "@mantine/core";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import { services } from "../../../public/data";
-import HeroContent from "./HeroContent";
-import ServiceCard from "./ServiceCard";
+import { Box, Group, Text, Button, Anchor } from "@mantine/core";
+import { companyInfo, navigationItems } from "../../../public/data";
+import { Link } from "react-router-dom";
+import {
+  IconBrandTelegram,
+  IconBrandWhatsapp,
+  IconPhone,
+} from "@tabler/icons-react";
 
 const HeroSlider = memo(() => {
   return (
-    <Box id="hero" className="hero-container" style={{ position: "relative" }}>
+    <Box
+      id="hero"
+      className="hero-container"
+      style={{
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "20px 40px",
+      }}
+    >
       <Box
         className="hero-background"
         style={{
           position: "absolute",
-          top: 0,
-          left: 0,
-          rotate: "180deg",
           width: "100%",
-          height: "100%",
-          background:
-            "linear-gradient(90deg,rgba(66, 66, 66, 1) 0%, rgba(97, 97, 97, 1) 50%, rgba(255, 255, 255, 1) 100%)",
-          zIndex: 0,
+          height: "60%",
+          backgroundImage: "url('/header.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
-      ></Box>
-      <Swiper
-        modules={[Pagination, Autoplay]}
-        spaceBetween={0}
-        loop
-        slidesPerView={1}
-        autoplay={{ delay: 5000, disableOnInteraction: true }}
-        speed={1000}
-        allowTouchMove={true}
-        touchRatio={1}
-        touchAngle={45}
-        grabCursor={true}
-        style={{
-          height: "100%",
-          width: "100%",
-          position: "relative",
-          zIndex: 1,
-        }}
-        className="hero-swiper"
+      />
+
+      <Group
+        justify="space-between"
+        align="center"
+        w="100%"
+        style={{ position: "relative", zIndex: 10, marginBottom: "14px" }}
       >
-        {services.map((service, index) => (
-          <SwiperSlide key={service.id}>
-            <Container
-              size="xl"
-              className="hero-content"
-              px={{ base: "sm", md: "md" }}
-              py={{ base: "lg", md: "xl" }}
-            >
-              <Group align="center" justify="space-between">
-                <HeroContent service={service} index={index} />
-                <Box
-                  style={{
-                    width: "100%",
-                    maxWidth: "400px",
-                    flexShrink: 0,
-                  }}
-                  visibleFrom="sm"
-                >
-                  <ServiceCard service={service} index={index} />
-                </Box>
-              </Group>
-            </Container>
-          </SwiperSlide>
+        {/* Лого с отступом слева */}
+        <Box style={{ marginLeft: "-80px" }}>
+          <img src="/svgviewer-output.svg" alt="logo" width={480} />
+        </Box>
+
+        <Box
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            gap: "8px",
+            marginRight: "-240px", // Сдвигаем левее
+          }}
+        >
+          <Group
+            gap="md"
+            style={{ flexDirection: "column", alignItems: "flex-end" }}
+          >
+            <Group gap="md">
+              <Button
+                component="a"
+                href="https://wa.me/79850867021"
+                target="_blank"
+                color="green"
+              >
+                <IconBrandWhatsapp />
+              </Button>
+
+              <Button
+                component="a"
+                href="https://t.me/Stipstone"
+                target="_blank"
+                color="blue"
+              >
+                <IconBrandTelegram />
+              </Button>
+            </Group>
+
+            <Group gap="xs">
+              <IconPhone style={{ color: "grey" }} size={20} />
+              <Anchor
+                href={`tel:${companyInfo.phone}`}
+                style={{
+                  color: "grey",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                  fontSize: "16px",
+                }}
+              >
+                {companyInfo.phone}
+              </Anchor>
+            </Group>
+          </Group>
+        </Box>
+        {/* Кнопка "Заказать звонок" с прозрачным фоном */}
+        <Button
+          variant="outline"
+          style={{
+            height: "48px",
+            borderRadius: "8px",
+            borderColor: "grey",
+            color: "#grey",
+            backgroundColor: "transparent",
+          }}
+        >
+          <Anchor
+            href={`tel:${companyInfo.phone}`}
+            style={{
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            Заказать звонок
+          </Anchor>
+        </Button>
+      </Group>
+
+      <Group
+        gap="xs"
+        style={{
+          position: "relative",
+          zIndex: 10,
+          flexWrap: "wrap",
+        }}
+      >
+        {navigationItems.map((item, index) => (
+          <Group key={item.id} gap="xs" align="center">
+            <Link to={item.href}>
+              <Button variant="subtle" color="dark" justify="flex-start">
+                {item.label}
+              </Button>
+            </Link>
+
+            {index < navigationItems.length - 1 && (
+              <Text c="teal" size="sm">
+                •
+              </Text>
+            )}
+          </Group>
         ))}
-      </Swiper>
+      </Group>
     </Box>
   );
 });
