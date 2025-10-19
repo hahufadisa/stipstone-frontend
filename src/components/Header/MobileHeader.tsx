@@ -4,9 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IconX, IconMenu2, IconPhone } from "@tabler/icons-react";
 import { companyInfo, navigationItems } from "../../../public/data";
 import { Link } from "react-router-dom";
+import { useWindowSize } from "usehooks-ts";
 
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { width } = useWindowSize();
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -19,6 +21,10 @@ const MobileHeader = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  if (width >= 456) {
+    return null;
+  }
 
   return (
     <div className="mobile-header-container">
