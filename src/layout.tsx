@@ -19,7 +19,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <AppShell>
       <Header />
-      <MobileHeader />
       <AppShell.Main style={{ paddingTop: isMobile ? "30px" : "120px" }}>
         {children}
       </AppShell.Main>
