@@ -18,7 +18,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <AppShell>
       <Header />
-      <AppShell.Main style={{ paddingTop: isMobile ? "30px" : "120px" }}>
+      <AppShell.Main style={{ paddingTop: isMobile ? "30px" : "160px" }}>
         {children}
       </AppShell.Main>
       {pathname !== "/calc" && <ContactSection />}
