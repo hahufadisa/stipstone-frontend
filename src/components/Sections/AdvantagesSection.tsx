@@ -65,7 +65,7 @@ const AdvantagesSection: React.FC<AdvantagesSectionProps> = () => {
               ИЗ ИСКУССТВЕННОГО КАМНЯ
               <br />
               НА ЗАКАЗ
-              <br />В САНКТ-ПЕТЕРБУРГЕ
+              <br />В ЗЕЛЕНОГРАДЕ
             </Text>
           </motion.div>
 
